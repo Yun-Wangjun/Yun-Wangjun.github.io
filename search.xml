@@ -1,26 +1,2412 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>My New Post</title>
-    <url>/2020/02/04/My-New-Post/</url>
-    <content><![CDATA[]]></content>
+    <title>百度AI学习</title>
+    <url>/2020/02/04/%E7%99%BE%E5%BA%A6AI%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="了解人工智能？"><a href="#了解人工智能？" class="headerlink" title="了解人工智能？"></a>了解人工智能？</h1><h2 id="什么是人工智能？"><a href="#什么是人工智能？" class="headerlink" title="什么是人工智能？"></a>什么是人工智能？</h2><p>由人创造的”智慧能力”，同样具备智慧生物的能力</p>
+<p>耳朵=倾听=麦克风=语音识别  ASR  Automatic  Speech  Recognition</p>
+<p>嘴巴=诉说=扬声器=语音合成  TTS  Text  To  Speech</p>
+<p>眼睛=观察=摄像头=图像识别  IR  Image  Recognition</p>
+<p>思考=理解=逻辑处理=自然语言处理  NLP  Natural   Language  Processing</p>
+<h2 id="目前的人工智能做了哪些？"><a href="#目前的人工智能做了哪些？" class="headerlink" title="目前的人工智能做了哪些？"></a>目前的人工智能做了哪些？</h2><h3 id="语音识别、合成："><a href="#语音识别、合成：" class="headerlink" title="语音识别、合成："></a>语音识别、合成：</h3><ul>
+<li>小米的小爱同学</li>
+<li>苹果的Siri</li>
+<li>微软的Cortana, 声波的转写和拼接</li>
+</ul>
+<h3 id="图像识别："><a href="#图像识别：" class="headerlink" title="图像识别："></a>图像识别：</h3><ul>
+<li>交通摄像头拍违章，刷脸解锁手机等</li>
+</ul>
+<h3 id="视频识别："><a href="#视频识别：" class="headerlink" title="视频识别："></a>视频识别：</h3><ul>
+<li>抖音内容审核，视频社交APP的审核机制</li>
+</ul>
+<h3 id="文字识别："><a href="#文字识别：" class="headerlink" title="文字识别："></a>文字识别：</h3><ul>
+<li>从身份证照片提取身份证号码，扫一扫翻译</li>
+</ul>
+<h3 id="自然语言处理："><a href="#自然语言处理：" class="headerlink" title="自然语言处理："></a>自然语言处理：</h3><ul>
+<li>智能问答机器人，也包含小米的小爱同学，苹果的siri</li>
+</ul>
+<h2 id="我们身边的人工智能"><a href="#我们身边的人工智能" class="headerlink" title="我们身边的人工智能"></a>我们身边的人工智能</h2><ul>
+<li>银行办卡刷脸就ok    人脸识别+身份认证</li>
+<li>车辆违章有牌儿就跑不了    图像识别+拍照识别</li>
+<li>违法犯罪路过天眼，等于自投罗网   图像采集+人脸识别</li>
+<li>“小爱同学”，“哎~”,”打开电视”，“好的!”     语音识别+语音和成+自然语音处理</li>
+<li>“欢迎使用10010智能语音系统”，“我还有多少话费？”  “您的话费余额为0.01”   语音识别+语音合成+自然语言处理</li>
+<li>扫一扫翻译看不懂的文字   文字识别+机器翻译</li>
+</ul>
+<h2 id="我们与人工智能的故事"><a href="#我们与人工智能的故事" class="headerlink" title="我们与人工智能的故事"></a>我们与人工智能的故事</h2><h1 id="了解百度AI开放平台——–百度大脑"><a href="#了解百度AI开放平台——–百度大脑" class="headerlink" title="了解百度AI开放平台——–百度大脑"></a>了解百度AI开放平台——–百度大脑</h1><p>官网：<a href="http://ai.baidu.com/" target="_blank" rel="noopener">http://ai.baidu.com/</a></p>
+<h1 id="Python-SDK"><a href="#Python-SDK" class="headerlink" title="Python  SDK"></a>Python  SDK</h1><p>pip install baidu-aip</p>
+<h3 id="新建AipSpeech"><a href="#新建AipSpeech" class="headerlink" title="新建AipSpeech"></a>新建AipSpeech</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> aip <span class="keyword">import</span> AipSpeech</span><br><span class="line"></span><br><span class="line"><span class="string">""" 你的 APPID AK SK """</span></span><br><span class="line">APP_ID = <span class="string">'你的 App ID'</span></span><br><span class="line">API_KEY = <span class="string">'你的 Api Key'</span></span><br><span class="line">SECRET_KEY = <span class="string">'你的 Secret Key'</span></span><br><span class="line"></span><br><span class="line">client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="语音合成"><a href="#语音合成" class="headerlink" title="语音合成"></a>语音合成</h1><p><a href="https://ai.baidu.com/ai-doc/SPEECH/7k38y8ier" target="_blank" rel="noopener">https://ai.baidu.com/ai-doc/SPEECH/7k38y8ier</a></p>
+<ul>
+<li>合成文本长度必须小于1024字节，如果本文长度较长，可以采用多次请求的方式。文本长度不可超过限制</li>
+</ul>
+<h2 id="举例，要把一段文字合成为语音文件："><a href="#举例，要把一段文字合成为语音文件：" class="headerlink" title="举例，要把一段文字合成为语音文件："></a>举例，要把一段文字合成为语音文件：</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result  = client.synthesis(<span class="string">'你好百度'</span>, <span class="string">'zh'</span>, <span class="number">1</span>, &#123;</span><br><span class="line">    <span class="string">'vol'</span>: <span class="number">5</span>,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 识别正确返回语音二进制 错误则返回dict 参照下面错误码</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> isinstance(result, dict):</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'auido.mp3'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(result)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+<th>是否必须</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tex</td>
+<td>String</td>
+<td>合成的文本，使用UTF-8编码， 请注意文本长度必须小于1024字节</td>
+<td>是</td>
+</tr>
+<tr>
+<td>cuid</td>
+<td>String</td>
+<td>用户唯一标识，用来区分用户， 填写机器 MAC 地址或 IMEI 码，长度为60以内</td>
+<td>否</td>
+</tr>
+<tr>
+<td>spd</td>
+<td>String</td>
+<td>语速，取值0-9，默认为5中语速</td>
+<td>否</td>
+</tr>
+<tr>
+<td>pit</td>
+<td>String</td>
+<td>音调，取值0-9，默认为5中语调</td>
+<td>否</td>
+</tr>
+<tr>
+<td>vol</td>
+<td>String</td>
+<td>音量，取值0-15，默认为5中音量</td>
+<td>否</td>
+</tr>
+<tr>
+<td>per</td>
+<td>String</td>
+<td>发音人选择, 0为女声，1为男声， 3为情感合成-度逍遥，4为情感合成-度丫丫，默认为普通女</td>
+<td>否</td>
+</tr>
+</tbody></table>
+<h1 id="语音识别"><a href="#语音识别" class="headerlink" title="语音识别"></a>语音识别</h1><p>​        将人类的语音中的词汇内容转换为计算机可读的输入，例如按键、二进制编码或者字符序列</p>
+<h2 id="支持的语音格式"><a href="#支持的语音格式" class="headerlink" title="支持的语音格式"></a>支持的语音格式</h2><p>​        原始 PCM 的录音参数必须符合 16k 采样率、16bit 位深、单声道，支持的格式有：pcm（不压缩）、wav（不压缩，pcm编码）、amr（压缩格式）。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>​        如果需要使用实时识别、长语音、唤醒词、语义解析等其它语音功能，请使用Android或者iOS SDK 或 Linux C++ SDK 等。</p>
+<ol>
+<li>请严格按照文档里描述的参数进行开发，特别请关注原始录音参数以及语音压缩格式的建议，否则会影响识别率，进而影响到产品的用户体验。</li>
+<li>目前系统支持的语音时长上限为60s，请不要超过这个长度，否则会返回错误。</li>
+</ol>
+<h2 id="接口描述"><a href="#接口描述" class="headerlink" title="接口描述"></a>接口描述</h2><p>向远程服务上传整段语音进行识别</p>
+<h2 id="请求说明"><a href="#请求说明" class="headerlink" title="请求说明"></a>请求说明</h2><p>举例，要对段保存有一段语音的语音文件进行识别：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 读取文件</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line"># 识别本地文件</span><br><span class="line">client.asr(get_file_content(&#39;audio.pcm&#39;), &#39;pcm&#39;, 16000, &#123;</span><br><span class="line">    &#39;dev_pid&#39;: 1536,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+<th>是否必须</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>speech</td>
+<td>Buffer</td>
+<td>建立包含语音内容的Buffer对象, 语音文件的格式，pcm 或者 wav 或者 amr。不区分大小写</td>
+<td>是</td>
+</tr>
+<tr>
+<td>format</td>
+<td>String</td>
+<td>语音文件的格式，pcm 或者 wav 或者 amr。不区分大小写。推荐pcm文件</td>
+<td>是</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>int</td>
+<td>采样率，16000，固定值</td>
+<td>是</td>
+</tr>
+<tr>
+<td>cuid</td>
+<td>String</td>
+<td>用户唯一标识，用来区分用户，填写机器 MAC 地址或 IMEI 码，长度为60以内</td>
+<td>否</td>
+</tr>
+<tr>
+<td>dev_pid</td>
+<td>Int</td>
+<td>不填写lan参数生效，都不填写，默认1537（普通话 输入法模型），dev_pid参数见本节开头的表格</td>
+<td>否</td>
+</tr>
+<tr>
+<td>lan(已废弃)</td>
+<td>String</td>
+<td>历史兼容参数，请使用dev_pid。如果dev_pid填写，该参数会被覆盖。语种选择,输入法模型，默认中文（zh）。 中文=zh、粤语=ct、英文=en，不区分大小写。</td>
+<td>否</td>
+</tr>
+</tbody></table>
+<p>dev_pid 参数列表</p>
+<table>
+<thead>
+<tr>
+<th>dev_pid</th>
+<th>语言</th>
+<th>模型</th>
+<th>是否有标点</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1536</td>
+<td>普通话(支持简单的英文识别)</td>
+<td>搜索模型</td>
+<td>无标点</td>
+<td>支持自定义词库</td>
+</tr>
+<tr>
+<td>1537</td>
+<td>普通话(纯中文识别)</td>
+<td>输入法模型</td>
+<td>有标点</td>
+<td>支持自定义词库</td>
+</tr>
+<tr>
+<td>1737</td>
+<td>英语</td>
+<td></td>
+<td>无标点</td>
+<td>不支持自定义词库</td>
+</tr>
+<tr>
+<td>1637</td>
+<td>粤语</td>
+<td></td>
+<td>有标点</td>
+<td>不支持自定义词库</td>
+</tr>
+<tr>
+<td>1837</td>
+<td>四川话</td>
+<td></td>
+<td>有标点</td>
+<td>不支持自定义词库</td>
+</tr>
+<tr>
+<td>1936</td>
+<td>普通话远场</td>
+<td>远场模型</td>
+<td>有标点</td>
+<td>不支持</td>
+</tr>
+</tbody></table>
+<p><strong>语音识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否一定输出</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>err_no</td>
+<td>int</td>
+<td>是</td>
+<td>错误码</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>int</td>
+<td>是</td>
+<td>错误码描述</td>
+</tr>
+<tr>
+<td>sn</td>
+<td>int</td>
+<td>是</td>
+<td>语音数据唯一标识，系统内部产生，用于 debug</td>
+</tr>
+<tr>
+<td>result</td>
+<td>int</td>
+<td>是</td>
+<td>识别结果数组，提供1-5 个候选结果，string 类型为识别的字符串， utf-8 编码</td>
+</tr>
+</tbody></table>
+<p><strong>返回样例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 成功返回</span><br><span class="line">&#123;</span><br><span class="line">    &quot;err_no&quot;: 0,</span><br><span class="line">    &quot;err_msg&quot;: &quot;success.&quot;,</span><br><span class="line">    &quot;corpus_no&quot;: &quot;15984125203285346378&quot;,</span><br><span class="line">    &quot;sn&quot;: &quot;481D633F-73BA-726F-49EF-8659ACCC2F3D&quot;,</span><br><span class="line">    &quot;result&quot;: [&quot;北京天气&quot;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 失败返回</span><br><span class="line">&#123;</span><br><span class="line">    &quot;err_no&quot;: 2000,</span><br><span class="line">    &quot;err_msg&quot;: &quot;data empty.&quot;,</span><br><span class="line">    &quot;sn&quot;: null</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="FFmpeg音频转码工具"><a href="#FFmpeg音频转码工具" class="headerlink" title="FFmpeg音频转码工具"></a>FFmpeg音频转码工具</h2><p>​    这个工具可以将wav wma mp3 等音频文件转换为 pcm 无压缩音频文件</p>
+<h5 id="添加环境变量："><a href="#添加环境变量：" class="headerlink" title="添加环境变量："></a>添加环境变量：</h5><p>​    H:\Python3全栈开发\Baidu_AI\音频转码工具\ffmpeg-20200131-62d92a8-win64-static\bin</p>
+<p><img src="C:%5CUsers%5Cyun%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200201194941721.png" alt="image-20200201194941721"></p>
+<h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><ul>
+<li><pre><code class="python">os.system(<span class="string">'ffmpeg -y  -i wyn.m4a  -acodec pcm_s16le -f s16le -ac 1 -ar 16000 wyn.m4a.pcm'</span>)  <span class="comment"># 将.m4a文件转为.pcm</span>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;python</span><br><span class="line">  os.system(&#39;ffplay  auido.mp3&#39;)   #播放MP3文件</span><br></pre></td></tr></table></figure>
+
+
+
+
+</code></pre>
+</li>
+</ul>
+<h1 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h1><h2 id="接口能力"><a href="#接口能力" class="headerlink" title="接口能力"></a>接口能力</h2><p><strong>图像识别接口一览表</strong></p>
+<table>
+<thead>
+<tr>
+<th>接口名称</th>
+<th>接口能力简要描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>图像主体检测</td>
+<td>识别图像中的主体具体坐标位置。</td>
+</tr>
+<tr>
+<td>通用物体和场景识别高级版</td>
+<td>识别图片中的场景及物体标签，支持10w+标签类型。</td>
+</tr>
+<tr>
+<td>菜品识别</td>
+<td>检测用户上传的菜品图片，返回具体的菜名、卡路里、置信度信息。</td>
+</tr>
+<tr>
+<td>自定义菜品识别</td>
+<td>入库自定义的单菜品图，实现上传多菜品图的精准识别，返回具体的菜名、位置、置信度信息</td>
+</tr>
+<tr>
+<td>logo商标识别</td>
+<td>识别图片中包含的商品LOGO信息，返回LOGO品牌名称、在图片中的位置、置信度。</td>
+</tr>
+<tr>
+<td>动物识别</td>
+<td>检测用户上传的动物图片，返回动物名称、置信度信息。</td>
+</tr>
+<tr>
+<td>植物识别</td>
+<td>检测用户上传的植物图片，返回植物名称、置信度信息。</td>
+</tr>
+<tr>
+<td>花卉识别</td>
+<td>检测用户上传的花卉图片，返回花卉名称、置信度信息。</td>
+</tr>
+<tr>
+<td>果蔬食材识别</td>
+<td>检测用户上传的果蔬类图片，返回果蔬名称、置信度信息。</td>
+</tr>
+<tr>
+<td>地标识别</td>
+<td>检测用户上传的地标图片，返回地标名称。</td>
+</tr>
+<tr>
+<td>红酒识别</td>
+<td>识别图像中的红酒标签，返回红酒名称、国家、产区、酒庄、类型、糖分、葡萄品种、酒品描述等信息。</td>
+</tr>
+<tr>
+<td>货币识别</td>
+<td>识别图像中的货币类型，返回货币名称、代码、面值、年份信息，可识别百余种国内外常见货币。</td>
+</tr>
+</tbody></table>
+<p><strong>车辆分析接口一览表</strong></p>
+<table>
+<thead>
+<tr>
+<th>接口名称</th>
+<th>接口能力简要描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>车型识别</td>
+<td>检测用户上传的车辆图片，识别所属车型，包括车辆品牌及具体型号、颜色、年份、位置信息。</td>
+</tr>
+</tbody></table>
+<h2 id="版本更新记录"><a href="#版本更新记录" class="headerlink" title="版本更新记录"></a>版本更新记录</h2><table>
+<thead>
+<tr>
+<th>上线日期</th>
+<th>版本号</th>
+<th>更新内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2019.6.6</td>
+<td>2.2.17</td>
+<td>新增红酒，货币，花卉，蔬菜识别</td>
+</tr>
+<tr>
+<td>2018.12.7</td>
+<td>2.2.10</td>
+<td>新增地标识别接口</td>
+</tr>
+<tr>
+<td>2018.4.9</td>
+<td>2.2.2</td>
+<td>新增通用物体识别接口</td>
+</tr>
+<tr>
+<td>2017.12.22</td>
+<td>2.0.0</td>
+<td>SDK代码重构</td>
+</tr>
+<tr>
+<td>2017.9.27</td>
+<td>1.6.6</td>
+<td>图像识别服务新增动物识别，植物识别接口</td>
+</tr>
+<tr>
+<td>2017.9.7</td>
+<td>1.6.5</td>
+<td>新增图像识别服务</td>
+</tr>
+</tbody></table>
+<h2 id="安装图像识别-Python-SDK"><a href="#安装图像识别-Python-SDK" class="headerlink" title="安装图像识别 Python SDK"></a>安装图像识别 Python SDK</h2><p><strong>图像识别 Python SDK目录结构</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">├── README.md</span><br><span class="line">├── aip                   &#x2F;&#x2F;SDK目录</span><br><span class="line">│   ├── __init__.py       &#x2F;&#x2F;导出类</span><br><span class="line">│   ├── base.py           &#x2F;&#x2F;aip基类</span><br><span class="line">│   ├── http.py           &#x2F;&#x2F;http请求</span><br><span class="line">│   └── imageclassify.py &#x2F;&#x2F;图像识别</span><br><span class="line">└── setup.py              &#x2F;&#x2F;setuptools安装</span><br></pre></td></tr></table></figure>
+
+<p><strong>支持Python版本：2.7.+ ,3.+</strong></p>
+<p><strong>安装使用Python SDK有如下方式</strong>：</p>
+<ul>
+<li>如果已安装pip，执行<code>pip install baidu-aip</code>即可。</li>
+<li>如果已安装setuptools，执行<code>python setup.py install</code>即可。</li>
+</ul>
+<h2 id="新建AipImageClassify"><a href="#新建AipImageClassify" class="headerlink" title="新建AipImageClassify"></a>新建AipImageClassify</h2><p>AipImageClassify是图像识别的Python SDK客户端，为使用图像识别的开发人员提供了一系列的交互方法。</p>
+<p>参考如下代码新建一个AipImageClassify：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from aip import AipImageClassify</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 你的 APPID AK SK &quot;&quot;&quot;</span><br><span class="line">APP_ID &#x3D; &#39;你的 App ID&#39;</span><br><span class="line">API_KEY &#x3D; &#39;你的 Api Key&#39;</span><br><span class="line">SECRET_KEY &#x3D; &#39;你的 Secret Key&#39;</span><br><span class="line"></span><br><span class="line">client &#x3D; AipImageClassify(APP_ID, API_KEY, SECRET_KEY)</span><br></pre></td></tr></table></figure>
+
+<p>在上面代码中，常量<code>APP_ID</code>在百度智能云控制台中创建，常量<code>API_KEY</code>与<code>SECRET_KEY</code>是在创建完毕应用后，系统分配给用户的，均为字符串，用于标识用户，为访问做签名验证，可在AI服务控制台中的<strong>应用列表</strong>中查看。</p>
+<p><strong>注意</strong>：如您以前是百度智能云的老用户，其中<code>API_KEY</code>对应百度智能云的“Access Key ID”，<code>SECRET_KEY</code>对应百度智能云的“Access Key Secret”。</p>
+<h2 id="配置AipFace"><a href="#配置AipFace" class="headerlink" title="配置AipFace"></a>配置AipFace</h2><p>如果用户需要配置AipFace的网络请求参数(一般不需要配置)，可以在构造AipFace之后调用接口设置参数，目前只支持以下参数：</p>
+<table>
+<thead>
+<tr>
+<th>接口</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>setConnectionTimeoutInMillis</td>
+<td>建立连接的超时时间（单位：毫秒</td>
+</tr>
+<tr>
+<td>setSocketTimeoutInMillis</td>
+<td>通过打开的连接传输数据的超时时间（单位：毫秒）</td>
+</tr>
+</tbody></table>
+<h2 id="通用物体识别"><a href="#通用物体识别" class="headerlink" title="通用物体识别"></a>通用物体识别</h2><p>该请求用于通用物体及场景识别，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中的多个物体及场景标签。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用通用物体识别 &quot;&quot;&quot;</span><br><span class="line">client.advancedGeneral(image);</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 如果有可选参数 &quot;&quot;&quot;</span><br><span class="line">options &#x3D; &#123;&#125;</span><br><span class="line">options[&quot;baike_num&quot;] &#x3D; 5</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 带参数调用通用物体识别 &quot;&quot;&quot;</span><br><span class="line">client.advancedGeneral(image, options)</span><br></pre></td></tr></table></figure>
+
+<p><strong>通用物体识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>baike_num</td>
+<td>否</td>
+<td>string</td>
+<td>0</td>
+<td>返回百科信息的结果数，默认不返回</td>
+</tr>
+</tbody></table>
+<p><strong>通用物体识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>是</td>
+<td>uint64</td>
+<td>唯一的log id，用于问题定位</td>
+</tr>
+<tr>
+<td>result_num</td>
+<td>是</td>
+<td>unit32</td>
+<td>返回结果数目，及result数组中的元素个数</td>
+</tr>
+<tr>
+<td>result</td>
+<td>是</td>
+<td>arrry(object)</td>
+<td>标签结果数组</td>
+</tr>
+<tr>
+<td>+keyword</td>
+<td>是</td>
+<td>string</td>
+<td>图片中的物体或场景名称</td>
+</tr>
+<tr>
+<td>+score</td>
+<td>是</td>
+<td>float</td>
+<td>置信度，0-1</td>
+</tr>
+<tr>
+<td>+root</td>
+<td>是</td>
+<td>string</td>
+<td>识别结果的上层标签，有部分钱币、动漫、烟酒等tag无上层标签</td>
+</tr>
+<tr>
+<td>+baike_info</td>
+<td>object</td>
+<td>否</td>
+<td>对应识别结果的百科词条名称</td>
+</tr>
+<tr>
+<td>++baike_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百度百科页面链接</td>
+</tr>
+<tr>
+<td>++image_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科图片链接</td>
+</tr>
+<tr>
+<td>++description</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科内容描述</td>
+</tr>
+</tbody></table>
+<p><strong>通用物体识别 返回示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log_id&quot;: 327863200205075661,</span><br><span class="line">  &quot;result_num&quot;: 5,</span><br><span class="line">  &quot;result&quot;: [&#123;</span><br><span class="line">    &quot;score&quot;: 0.967622,</span><br><span class="line">    &quot;root&quot;: &quot;公众人物&quot;,</span><br><span class="line">    &quot;baike_info&quot;: &#123;</span><br><span class="line">      &quot;baike_url&quot;: &quot;http:&#x2F;&#x2F;baike.baidu.com&#x2F;item&#x2F;%E6%96%B0%E5%9E%A3%E7%BB%93%E8%A1%A3&#x2F;8035884&quot;,</span><br><span class="line">      &quot;image_url&quot;: &quot;http:&#x2F;&#x2F;imgsrc.baidu.com&#x2F;baike&#x2F;pic&#x2F;item&#x2F;91ef76c6a7efce1b27893518a451f3deb58f6546.jpg&quot;,</span><br><span class="line">      &quot;description&quot;: &quot;新垣结衣(Aragaki Yui)，1988年6月11日出生于冲绳县那霸市。日本女演员、歌手、模特。毕业于日出高中。2001年，参加《nicola》模特比赛并获得最优秀奖。2005年，因出演现代剧《涩谷15》而作为演员出道。2006年，参演校园剧《我的老大，我的英雄》；同年，她还出版了个人首本写真集《水漾青春》。2007年，她从日出高校毕业后开始专注于演艺发展，并发表个人首张音乐专辑《天空》；同年，新垣结衣还主演了爱情片《恋空》，而她也凭借该片获得了多个电影新人奖项。2010年，主演爱情片《花水木》。2011年，主演都市剧《全开女孩》。2012年，相继参演现代剧《Legal High》、剧情片《剧场版新参者：麒麟之翼》。2013年，主演都市剧《飞翔情报室》。2014年，她主演了剧情片《黎明的沙耶》。2016年，主演爱情喜剧《逃避虽可耻但有用》，并凭借该剧获得了多个电视剧女主角奖项。2017年，主演爱情片《恋爱回旋》，凭借该片获得第60届蓝丝带奖最佳女主角；同年11月，她还凭借医疗剧《Code Blue 3》获得第94届日剧学院赏最佳女配角。&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;keyword&quot;: &quot;新垣结衣&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.716067,</span><br><span class="line">    &quot;root&quot;: &quot;人物-人物特写&quot;,</span><br><span class="line">    &quot;keyword&quot;: &quot;头发&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.421281,</span><br><span class="line">    &quot;root&quot;: &quot;商品-穿戴&quot;,</span><br><span class="line">    &quot;keyword&quot;: &quot;围巾&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.22347,</span><br><span class="line">    &quot;root&quot;: &quot;商品-五金&quot;,</span><br><span class="line">    &quot;keyword&quot;: &quot;拉链&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.028031,</span><br><span class="line">    &quot;root&quot;: &quot;商品-穿戴&quot;,</span><br><span class="line">    &quot;keyword&quot;: &quot;脖套&quot;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="菜品识别"><a href="#菜品识别" class="headerlink" title="菜品识别"></a>菜品识别</h2><p>该请求用于菜品识别。即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片的菜品名称、卡路里信息、置信度。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用菜品识别 &quot;&quot;&quot;</span><br><span class="line">client.dishDetect(image);</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 如果有可选参数 &quot;&quot;&quot;</span><br><span class="line">options &#x3D; &#123;&#125;</span><br><span class="line">options[&quot;top_num&quot;] &#x3D; 3</span><br><span class="line">options[&quot;filter_threshold&quot;] &#x3D; &quot;0.7&quot;</span><br><span class="line">options[&quot;baike_num&quot;] &#x3D; 5</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 带参数调用菜品识别 &quot;&quot;&quot;</span><br><span class="line">client.dishDetect(image, options)</span><br></pre></td></tr></table></figure>
+
+<p><strong>菜品识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>top_num</td>
+<td>否</td>
+<td>string</td>
+<td></td>
+<td>返回预测得分top结果数，默认为5</td>
+</tr>
+<tr>
+<td>filter_threshold</td>
+<td>否</td>
+<td>string</td>
+<td></td>
+<td>默认0.95，可以通过该参数调节识别效果，降低非菜识别率.</td>
+</tr>
+<tr>
+<td>baike_num</td>
+<td>否</td>
+<td>string</td>
+<td>0</td>
+<td>返回百科信息的结果数，默认不返回</td>
+</tr>
+</tbody></table>
+<p><strong>菜品识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>是</td>
+<td>uint64</td>
+<td>唯一的log id，用于问题定位</td>
+</tr>
+<tr>
+<td>result_num</td>
+<td>否</td>
+<td>unit32</td>
+<td>返回结果数目，及result数组中的元素个数</td>
+</tr>
+<tr>
+<td>result</td>
+<td>否</td>
+<td>array()</td>
+<td>菜品识别结果数组</td>
+</tr>
+<tr>
+<td>+name</td>
+<td>否</td>
+<td>string</td>
+<td>菜名，示例：鱼香肉丝</td>
+</tr>
+<tr>
+<td>+calorie</td>
+<td>否</td>
+<td>float</td>
+<td>卡路里，每100g的卡路里含量</td>
+</tr>
+<tr>
+<td>+probability</td>
+<td>否</td>
+<td>float</td>
+<td>识别结果中每一行的置信度值，0-1</td>
+</tr>
+<tr>
+<td>+baike_info</td>
+<td>object</td>
+<td>否</td>
+<td>对应识别结果的百科词条名称</td>
+</tr>
+<tr>
+<td>++baike_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百度百科页面链接</td>
+</tr>
+<tr>
+<td>++image_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科图片链接</td>
+</tr>
+<tr>
+<td>++description</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科内容描述</td>
+</tr>
+</tbody></table>
+<p><strong>菜品识别 返回示例</strong></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"log_id"</span>: <span class="number">7357081719365269362</span>,</span><br><span class="line">  <span class="attr">"result_num"</span>: <span class="number">5</span>,</span><br><span class="line">  <span class="attr">"result"</span>: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"calorie"</span>: <span class="string">"119"</span>,</span><br><span class="line">    <span class="attr">"has_calorie"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"酸汤鱼"</span>,</span><br><span class="line">    <span class="attr">"probability"</span>: <span class="string">"0.396031"</span></span><br><span class="line">    <span class="string">"baike_info"</span>: &#123;</span><br><span class="line">      <span class="attr">"baike_url"</span>: <span class="string">"http://baike.baidu.com/item/%E9%85%B8%E6%B1%A4%E9%B1%BC/1754055"</span>,</span><br><span class="line">      <span class="attr">"description"</span>: <span class="string">"酸汤鱼，是黔桂湘交界地区的一道侗族名菜，与侗族相邻的苗、水、瑶等少数民族也有相似菜肴，但其中以贵州侗族酸汤鱼最为有名，据考证此菜肴最早源于黎平县雷洞镇牙双一带。制作原料主要有鱼肉、酸汤、山仓子等香料。成菜后，略带酸味、幽香沁人、鲜嫩爽口开胃，是贵州“黔系”菜肴的代表作之一。这道菜通常先自制酸汤，之后将活鱼去掉内脏，入酸汤煮制。"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"calorie"</span>: <span class="string">"38"</span>,</span><br><span class="line">    <span class="attr">"has_calorie"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"原味黑鱼煲"</span>,</span><br><span class="line">    <span class="attr">"probability"</span>: <span class="string">"0.265432"</span>,</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"calorie"</span>: <span class="string">"144"</span>,</span><br><span class="line">    <span class="attr">"has_calorie"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"椒鱼片"</span>,</span><br><span class="line">    <span class="attr">"probability"</span>: <span class="string">"0.0998993"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"calorie"</span>: <span class="string">"98"</span>,</span><br><span class="line">    <span class="attr">"has_calorie"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"酸菜鱼"</span>,</span><br><span class="line">    <span class="attr">"probability"</span>: <span class="string">"0.0701917"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"calorie"</span>: <span class="string">"257.65"</span>,</span><br><span class="line">    <span class="attr">"has_calorie"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"柠檬鱼"</span>,</span><br><span class="line">    <span class="attr">"probability"</span>: <span class="string">"0.0471465"</span></span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="车辆识别"><a href="#车辆识别" class="headerlink" title="车辆识别"></a>车辆识别</h2><p>该请求用于检测一张车辆图片的具体车型。即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片的车辆品牌及型号。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用车辆识别 &quot;&quot;&quot;</span><br><span class="line">client.carDetect(image);</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 如果有可选参数 &quot;&quot;&quot;</span><br><span class="line">options &#x3D; &#123;&#125;</span><br><span class="line">options[&quot;top_num&quot;] &#x3D; 3</span><br><span class="line">options[&quot;baike_num&quot;] &#x3D; 5</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 带参数调用车辆识别 &quot;&quot;&quot;</span><br><span class="line">client.carDetect(image, options)</span><br></pre></td></tr></table></figure>
+
+<p><strong>车辆识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>top_num</td>
+<td>否</td>
+<td>string</td>
+<td></td>
+<td>返回预测得分top结果数，默认为5</td>
+</tr>
+<tr>
+<td>baike_num</td>
+<td>否</td>
+<td>string</td>
+<td>0</td>
+<td>返回百科信息的结果数，默认不返回</td>
+</tr>
+</tbody></table>
+<p><strong>车辆识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>否</td>
+<td>uint64</td>
+<td>唯一的log id，用于问题定位</td>
+</tr>
+<tr>
+<td>color_result</td>
+<td>是</td>
+<td>string</td>
+<td>颜色</td>
+</tr>
+<tr>
+<td>result</td>
+<td>否</td>
+<td>car-result()</td>
+<td>车型识别结果数组</td>
+</tr>
+<tr>
+<td>+name</td>
+<td>否</td>
+<td>string</td>
+<td>车型名称，示例：宝马x6</td>
+</tr>
+<tr>
+<td>+score</td>
+<td>否</td>
+<td>double</td>
+<td>置信度，示例：0.5321</td>
+</tr>
+<tr>
+<td>+year</td>
+<td>否</td>
+<td>string</td>
+<td>年份</td>
+</tr>
+<tr>
+<td>+baike_info</td>
+<td>object</td>
+<td>否</td>
+<td>对应识别结果的百科词条名称</td>
+</tr>
+<tr>
+<td>++baike_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百度百科页面链接</td>
+</tr>
+<tr>
+<td>++image_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科图片链接</td>
+</tr>
+<tr>
+<td>++description</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科内容描述</td>
+</tr>
+<tr>
+<td>location_result</td>
+<td>否</td>
+<td>string</td>
+<td>车在图片中的位置信息</td>
+</tr>
+</tbody></table>
+<p><strong>车辆识别 返回示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log_id&quot;: 4086212218842203806,</span><br><span class="line">  &quot;location_result&quot;: &#123;</span><br><span class="line">    &quot;width&quot;: 447,</span><br><span class="line">    &quot;top&quot;: 226,</span><br><span class="line">    &quot;height&quot;: 209,</span><br><span class="line">    &quot;left&quot;: 188</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;result&quot;: [&#123;</span><br><span class="line">    &quot;baike_info&quot;: &#123;</span><br><span class="line">      &quot;baike_url&quot;: &quot;http:&#x2F;&#x2F;baike.baidu.com&#x2F;item&#x2F;%E5%B8%83%E5%8A%A0%E8%BF%AAChiron&#x2F;20419512&quot;,</span><br><span class="line">      &quot;description&quot;: &quot;布加迪Chiron是法国跑车品牌布加迪出品的豪华超跑车。配置四涡轮增压发动机，420 公里每小时，有23种颜色的选择，售价高达260万美元。&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;score&quot;: 0.98793351650238,</span><br><span class="line">    &quot;name&quot;: &quot;布加迪Chiron&quot;,</span><br><span class="line">    &quot;year&quot;: &quot;无年份信息&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.0021970034576952,</span><br><span class="line">    &quot;name&quot;: &quot;奥迪RS5&quot;,</span><br><span class="line">    &quot;year&quot;: &quot;2011-2017&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.0021096928976476,</span><br><span class="line">    &quot;name&quot;: &quot;奥迪RS4&quot;,</span><br><span class="line">    &quot;year&quot;: &quot;无年份信息&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.0015581247862428,</span><br><span class="line">    &quot;name&quot;: &quot;奥迪RS7&quot;,</span><br><span class="line">    &quot;year&quot;: &quot;2014-2016&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.00082337751518935,</span><br><span class="line">    &quot;name&quot;: &quot;布加迪威航&quot;,</span><br><span class="line">    &quot;year&quot;: &quot;2004-2015&quot;</span><br><span class="line">  &#125;],</span><br><span class="line">  &quot;color_result&quot;: &quot;颜色无法识别&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="logo商标识别"><a href="#logo商标识别" class="headerlink" title="logo商标识别"></a>logo商标识别</h2><p>该请求用于检测和识别图片中的品牌LOGO信息。即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中LOGO的名称、位置和置信度。当效果欠佳时，可以建立子库（在<a href="https://console.bce.baidu.com/ai/#/ai/imagerecognition/overview/index" target="_blank" rel="noopener">控制台</a>创建应用并申请建库）并通过调用logo入口接口完成自定义logo入库，提高识别效果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用logo商标识别 &quot;&quot;&quot;</span><br><span class="line">client.logoSearch(image);</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 如果有可选参数 &quot;&quot;&quot;</span><br><span class="line">options &#x3D; &#123;&#125;</span><br><span class="line">options[&quot;custom_lib&quot;] &#x3D; &quot;true&quot;</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 带参数调用logo商标识别 &quot;&quot;&quot;</span><br><span class="line">client.logoSearch(image, options)</span><br></pre></td></tr></table></figure>
+
+<p><strong>logo商标识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>可选值范围</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>custom_lib</td>
+<td>否</td>
+<td>string</td>
+<td>true - 返回自定义库 false - 返回自定义库+默认库的识别结果</td>
+<td>false</td>
+<td>是否只使用自定义logo库的结果，默认false：返回自定义库+默认库的识别结果</td>
+</tr>
+</tbody></table>
+<p><strong>logo商标识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>number</td>
+<td>是</td>
+<td>请求标识码，随机数，唯一</td>
+<td>507499361</td>
+</tr>
+<tr>
+<td>result_num</td>
+<td>number</td>
+<td>是</td>
+<td>返回结果数目，即：result数组中元素个数</td>
+<td>2</td>
+</tr>
+<tr>
+<td>result</td>
+<td>array</td>
+<td>是</td>
+<td>返回结果数组，每一项为一个识别出的logo</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+location</td>
+<td>object</td>
+<td>是</td>
+<td>位置信息（左起像素位置、上起像素位置、像素宽、像素高）</td>
+<td>{“left”: 100,”top”:100,”width”:10,”height”:10}</td>
+</tr>
+<tr>
+<td>++left</td>
+<td>number</td>
+<td>是</td>
+<td>左起像素位置</td>
+<td>100</td>
+</tr>
+<tr>
+<td>++top</td>
+<td>number</td>
+<td>是</td>
+<td>上起像素位置</td>
+<td>100</td>
+</tr>
+<tr>
+<td>++width</td>
+<td>number</td>
+<td>是</td>
+<td>像素宽</td>
+<td>100</td>
+</tr>
+<tr>
+<td>++height</td>
+<td>number</td>
+<td>是</td>
+<td>像素高</td>
+<td>100</td>
+</tr>
+<tr>
+<td>+name</td>
+<td>string</td>
+<td>是</td>
+<td>识别的品牌名称</td>
+<td>京东</td>
+</tr>
+<tr>
+<td>+probability</td>
+<td>number</td>
+<td>是</td>
+<td>分类结果置信度（0–1.0）</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>+type</td>
+<td>number</td>
+<td>是</td>
+<td>type=0为1千种高优商标识别结果;type=1为2万类logo库的结果；其它type为自定义logo库结果</td>
+<td>1 （2万类的结果）</td>
+</tr>
+</tbody></table>
+<p><strong>logo商标识别 返回示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log_id&quot;: 843411868,</span><br><span class="line">  &quot;result_num&quot;: 1,</span><br><span class="line">  &quot;result&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;type&quot;: 0,</span><br><span class="line">      &quot;name&quot;: &quot;科颜氏&quot;,</span><br><span class="line">      &quot;probability&quot;: 0.99998807907104,</span><br><span class="line">      &quot;location&quot;: &#123;</span><br><span class="line">        &quot;width&quot;: 296,</span><br><span class="line">        &quot;top&quot;: 20,</span><br><span class="line">        &quot;height&quot;: 128,</span><br><span class="line">        &quot;left&quot;: 23</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="logo商标识别—添加"><a href="#logo商标识别—添加" class="headerlink" title="logo商标识别—添加"></a>logo商标识别—添加</h3><p>使用入库接口请先在<a href="https://console.bce.baidu.com/ai/#/ai/imagerecognition/overview/index" target="_blank" rel="noopener">控制台</a>创建应用并申请建库，建库成功后方可正常使用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line">brief &#x3D; &quot;&#123;\&quot;name\&quot;: \&quot;宝马\&quot;,\&quot;code\&quot;:\&quot;666\&quot;&#125;&quot;</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用logo商标识别—添加 &quot;&quot;&quot;</span><br><span class="line">client.logoAdd(image, brief);</span><br></pre></td></tr></table></figure>
+
+<p><strong>logo商标识别—添加 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>brief</td>
+<td>是</td>
+<td>string</td>
+<td>brief，检索时带回。此处要传对应的name与code字段，name长度小于100B，code长度小于150B</td>
+</tr>
+</tbody></table>
+<p><strong>logo商标识别—添加 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>number</td>
+<td>是</td>
+<td>请求标识码，随机数，唯一</td>
+<td>507499361</td>
+</tr>
+<tr>
+<td>cont_sign</td>
+<td>string</td>
+<td>是</td>
+<td>输入图片签名，可用于删除</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p><strong>logo商标识别—添加 返回示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log_id&quot;: 972934653,</span><br><span class="line">  &quot;cont_sign&quot;: &quot;217113248,419422301&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="logo商标识别—删除"><a href="#logo商标识别—删除" class="headerlink" title="logo商标识别—删除"></a>logo商标识别—删除</h3><p>使用删除接口请先在<a href="https://console.bce.baidu.com/ai/#/ai/imagerecognition/overview/index" target="_blank" rel="noopener">控制台</a>创建应用并申请建库，建库成功后先调用入库接口完成logo图片入库，删除接口用户在已入库的logo图片中删除图片。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用删除logo商标，传入参数为图片 &quot;&quot;&quot;</span><br><span class="line">client.logoDeleteByImage(image);</span><br><span class="line"></span><br><span class="line">contSign &#x3D; &quot;8cnn32frvrr2cd901&quot;</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用删除logo商标，传入参数为图片签名 &quot;&quot;&quot;</span><br><span class="line">client.logoDeleteBySign(contSign);</span><br></pre></td></tr></table></figure>
+
+<p><strong>logo商标识别—删除 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>cont_sign</td>
+<td>是</td>
+<td>string</td>
+<td>图片签名（和image二选一，image优先级更高）</td>
+</tr>
+</tbody></table>
+<p><strong>logo商标识别—删除 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>number</td>
+<td>是</td>
+<td>请求标识码，随机数，唯一</td>
+<td>507499361</td>
+</tr>
+</tbody></table>
+<p><strong>logo商标识别—删除 返回示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log_id&quot;: 50488417</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="动物识别"><a href="#动物识别" class="headerlink" title="动物识别"></a>动物识别</h2><p>该请求用于识别一张图片。即对于输入的一张图片（可正常解码，且长宽比适宜），输出动物识别结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用动物识别 &quot;&quot;&quot;</span><br><span class="line">client.animalDetect(image);</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 如果有可选参数 &quot;&quot;&quot;</span><br><span class="line">options &#x3D; &#123;&#125;</span><br><span class="line">options[&quot;top_num&quot;] &#x3D; 3</span><br><span class="line">options[&quot;baike_num&quot;] &#x3D; 5</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 带参数调用动物识别 &quot;&quot;&quot;</span><br><span class="line">client.animalDetect(image, options)</span><br></pre></td></tr></table></figure>
+
+<p><strong>动物识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>top_num</td>
+<td>否</td>
+<td>string</td>
+<td>6</td>
+<td>返回预测得分top结果数，默认为6</td>
+</tr>
+<tr>
+<td>baike_num</td>
+<td>否</td>
+<td>string</td>
+<td>0</td>
+<td>返回百科信息的结果数，默认不返回</td>
+</tr>
+</tbody></table>
+<p><strong>动物识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>uint64</td>
+<td>是</td>
+<td>唯一的log id，用于问题定位</td>
+</tr>
+<tr>
+<td>result</td>
+<td>arrry(object)</td>
+<td>是</td>
+<td>识别结果数组</td>
+</tr>
+<tr>
+<td>+name</td>
+<td>string</td>
+<td>是</td>
+<td>动物名称，示例：蒙古马</td>
+</tr>
+<tr>
+<td>+score</td>
+<td>uint32</td>
+<td>是</td>
+<td>置信度，示例：0.5321</td>
+</tr>
+<tr>
+<td>+baike_info</td>
+<td>object</td>
+<td>否</td>
+<td>对应识别结果的百科词条名称</td>
+</tr>
+<tr>
+<td>++baike_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百度百科页面链接</td>
+</tr>
+<tr>
+<td>++image_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科图片链接</td>
+</tr>
+<tr>
+<td>++description</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科内容描述</td>
+</tr>
+</tbody></table>
+<p><strong>动物识别 返回示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log_id&quot;: 7392482912853822863,</span><br><span class="line">  &quot;result&quot;: [&#123;</span><br><span class="line">    &quot;score&quot;: &quot;0.993811&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;叉角羚&quot;,</span><br><span class="line">    &quot;baike_info&quot;: &#123;</span><br><span class="line">      &quot;baike_url&quot;: &quot;http:&#x2F;&#x2F;baike.baidu.com&#x2F;item&#x2F;%E5%8F%89%E8%A7%92%E7%BE%9A&#x2F;801703&quot;,</span><br><span class="line">      &quot;description&quot;: &quot;叉角羚(学名：Antilocapra americana)：在角的中部角鞘有向前伸的分枝，故名。体型中等，体长1-1.5米，尾长7.5-10厘米，肩高81-104厘米，成体重36-60千克，雌体比雄体小；背面为红褐色，颈部有黑色鬃毛，腹部和臀部为白色，颊面部和颈部两侧有黑色块斑；毛被下面为绒毛，上覆以粗糙、质脆的长毛，由于某些皮肤肌的作用，能使其毛被呈不同角度，以利于保暖或散热。植食。叉角羚奔跑速度非常快，最高时速达100千米。一次跳跃可达3.5-6米。善游泳。夏季组成小群活动，冬季则集结成上百只的大群。为寻找食物和水源，一年中常进行几次迁移。性机警，视觉敏锐，能看到数千米外的物体。遇险时，臀部的白色毛能立起，向同伴告警。分布于北美洲。&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: &quot;0.000289439&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;印度羚&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: &quot;0.000186248&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;藏羚羊&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: &quot;0.000147176&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;跳羚&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: &quot;0.000134434&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;驯鹿&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: &quot;9.86555e-05&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;高鼻羚羊&quot;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="植物识别"><a href="#植物识别" class="headerlink" title="植物识别"></a>植物识别</h3><p>该请求用于识别一张图片。即对于输入的一张图片（可正常解码，且长宽比适宜），输出植物识别结果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用植物识别 &quot;&quot;&quot;</span><br><span class="line">client.plantDetect(image);</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 如果有可选参数 &quot;&quot;&quot;</span><br><span class="line">options &#x3D; &#123;&#125;</span><br><span class="line">options[&quot;baike_num&quot;] &#x3D; 5</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 带参数调用植物识别 &quot;&quot;&quot;</span><br><span class="line">client.plantDetect(image, options)</span><br></pre></td></tr></table></figure>
+
+<p><strong>植物识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>baike_num</td>
+<td>否</td>
+<td>string</td>
+<td>0</td>
+<td>返回百科信息的结果数，默认不返回</td>
+</tr>
+</tbody></table>
+<p><strong>植物识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>uint64</td>
+<td>是</td>
+<td>唯一的log id，用于问题定位</td>
+</tr>
+<tr>
+<td>result</td>
+<td>arrry(object)</td>
+<td>是</td>
+<td>植物识别结果数组</td>
+</tr>
+<tr>
+<td>+name</td>
+<td>string</td>
+<td>是</td>
+<td>植物名称，示例：吉娃莲</td>
+</tr>
+<tr>
+<td>+score</td>
+<td>uint32</td>
+<td>是</td>
+<td>置信度，示例：0.5321</td>
+</tr>
+<tr>
+<td>+baike_info</td>
+<td>object</td>
+<td>否</td>
+<td>对应识别结果的百科词条名称</td>
+</tr>
+<tr>
+<td>++baike_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百度百科页面链接</td>
+</tr>
+<tr>
+<td>++image_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科图片链接</td>
+</tr>
+<tr>
+<td>++description</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科内容描述</td>
+</tr>
+</tbody></table>
+<p><strong>植物识别 返回示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log_id&quot;: 1705495792822072357,</span><br><span class="line">  &quot;result&quot;: [&#123;</span><br><span class="line">    &quot;score&quot;: 0.99979120492935,</span><br><span class="line">    &quot;name&quot;: &quot;莲&quot;,</span><br><span class="line">    &quot;baike_info&quot;: &#123;</span><br><span class="line">      &quot;baike_url&quot;: &quot;http:&#x2F;&#x2F;baike.baidu.com&#x2F;item&#x2F;%E8%8E%B2&#x2F;2717141&quot;,</span><br><span class="line">      &quot;description&quot;: &quot;莲(Nelumbo nucifera)，又称荷、荷花、莲花、芙蕖、鞭蓉、水芙蓉、水芝、水芸、水旦、水华等，溪客、玉环是其雅称，未开的花蕾称菡萏，已开的花朵称鞭蕖，莲科，属多年生水生宿根草本植物，其地下茎称藕，能食用，叶入药，莲子为上乘补品，花可供观赏。是我国十大名花之一。是印度的国花。莲，双子叶植物，睡莲科。多年生挺水草本植物。根状茎横走，粗而肥厚，节间膨大，内有纵横通气孔道，节部缢缩。叶基生，挺出水面，盾形，直径30-90cm，波状边缘，上面深绿色，下面浅绿色。叶柄有小刺，长1-2m，挺出水面。花单生，直径10-25cm，椭圆花瓣多数，白色或粉红色；花柄长1-2m。花托在果期膨大，直径5-10cm，海绵质。坚果椭圆形和卵圆形，长1.5-2.0cm，灰褐色。种子卵圆形，长1.2-1.7cm，种皮红棕色。生于池塘、浅湖泊及稻田中。中国南北各省有自生或栽培，经济价值高。人们习惯上称种子为“莲子”、地下茎为“藕”、花托为“莲蓬”、叶为“荷叶”。&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.00015144718054216,</span><br><span class="line">    &quot;name&quot;: &quot;红睡莲&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 1.2172759852547e-05,</span><br><span class="line">    &quot;name&quot;: &quot;白睡莲&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 6.305016540864e-06,</span><br><span class="line">    &quot;name&quot;: &quot;延药睡莲&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 3.6133328649157e-06,</span><br><span class="line">    &quot;name&quot;: &quot;华夏慈姑&quot;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="图像主体检测"><a href="#图像主体检测" class="headerlink" title="图像主体检测"></a>图像主体检测</h2><p>用户向服务请求检测图像中的主体位置。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用图像主体检测 &quot;&quot;&quot;</span><br><span class="line">client.objectDetect(image);</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 如果有可选参数 &quot;&quot;&quot;</span><br><span class="line">options &#x3D; &#123;&#125;</span><br><span class="line">options[&quot;with_face&quot;] &#x3D; 0</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 带参数调用图像主体检测 &quot;&quot;&quot;</span><br><span class="line">client.objectDetect(image, options)</span><br></pre></td></tr></table></figure>
+
+<p><strong>图像主体检测 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>可选值范围</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>with_face</td>
+<td>否</td>
+<td>string</td>
+<td>0 - 不带人脸区域 1 - 带人脸区域</td>
+<td>1</td>
+<td>如果检测主体是人，主体区域是否带上人脸部分，0-不带人脸区域，其他-带人脸区域，裁剪类需求推荐带人脸，检索/识别类需求推荐不带人脸。默认取1，带人脸。</td>
+</tr>
+</tbody></table>
+<p><strong>图像主体检测 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>number</td>
+<td>是</td>
+<td>唯一的log id，用于问题定位</td>
+<td>507499361</td>
+</tr>
+<tr>
+<td>result</td>
+<td>object</td>
+<td>是</td>
+<td>裁剪结果</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+left</td>
+<td>number</td>
+<td>是</td>
+<td>表示定位位置的长方形左上顶点的水平坐标</td>
+<td>50</td>
+</tr>
+<tr>
+<td>+top</td>
+<td>number</td>
+<td>是</td>
+<td>表示定位位置的长方形左上顶点的垂直坐标</td>
+<td>60</td>
+</tr>
+<tr>
+<td>+width</td>
+<td>number</td>
+<td>是</td>
+<td>表示定位位置的长方形的宽度</td>
+<td>200</td>
+</tr>
+<tr>
+<td>+height</td>
+<td>number</td>
+<td>是</td>
+<td>表示定位位置的长方形的高度</td>
+<td>200</td>
+</tr>
+</tbody></table>
+<p><strong>图像主体检测 返回示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log_id&quot;: 895582300,</span><br><span class="line">  &quot;result&quot;: &#123;</span><br><span class="line">    &quot;width&quot;: 486,</span><br><span class="line">    &quot;top&quot;: 76,</span><br><span class="line">    &quot;left&quot;: 134,</span><br><span class="line">    &quot;height&quot;: 394</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="地标识别"><a href="#地标识别" class="headerlink" title="地标识别"></a>地标识别</h2><p>该请求用于识别地标，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中的地标识别结果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用地标识别 &quot;&quot;&quot;</span><br><span class="line">client.landmark(image);</span><br></pre></td></tr></table></figure>
+
+<p><strong>地标识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+</tbody></table>
+<p><strong>地标识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>number</td>
+<td>是</td>
+<td>唯一的log id，用于问题定位</td>
+<td>507499361</td>
+</tr>
+<tr>
+<td>result</td>
+<td>object</td>
+<td>是</td>
+<td>裁剪结果</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+landmark</td>
+<td>string</td>
+<td>是</td>
+<td>地标名称，无法识别则返回空字符串</td>
+<td>狮身人面像</td>
+</tr>
+</tbody></table>
+<p><strong>地标识别 返回示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log_id&quot;: 3450013152046070669,</span><br><span class="line">  &quot;result&quot;:</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;landmark&quot;: &quot;狮身人面像&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="花卉识别"><a href="#花卉识别" class="headerlink" title="花卉识别"></a>花卉识别</h2><p>检测用户上传的花卉图片，输出图片的花卉识别结果名称及对应的概率打分。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用花卉识别 &quot;&quot;&quot;</span><br><span class="line">client.flower(image);</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 如果有可选参数 &quot;&quot;&quot;</span><br><span class="line">options &#x3D; &#123;&#125;</span><br><span class="line">options[&quot;top_num&quot;] &#x3D; 3</span><br><span class="line">options[&quot;baike_num&quot;] &#x3D; 5</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 带参数调用花卉识别 &quot;&quot;&quot;</span><br><span class="line">client.flower(image, options)</span><br></pre></td></tr></table></figure>
+
+<p><strong>花卉识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td></td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>top_num</td>
+<td>否</td>
+<td>string</td>
+<td>5</td>
+<td>返回预测得分top结果数，默认为5</td>
+</tr>
+<tr>
+<td>baike_num</td>
+<td>否</td>
+<td>string</td>
+<td>0</td>
+<td>返回百科信息的结果数，默认不返回</td>
+</tr>
+</tbody></table>
+<p><strong>花卉识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>是</td>
+<td>uint64</td>
+<td>唯一的log id，用于问题定位</td>
+</tr>
+<tr>
+<td>result_num</td>
+<td>否</td>
+<td>uint32</td>
+<td>返回结果数目，及result数组中的元素个数</td>
+</tr>
+<tr>
+<td>result</td>
+<td>否</td>
+<td>object()</td>
+<td>标签结果数组</td>
+</tr>
+<tr>
+<td>+name</td>
+<td>否</td>
+<td>string</td>
+<td>花卉名称</td>
+</tr>
+<tr>
+<td>+score</td>
+<td>否</td>
+<td>double</td>
+<td>置信度，0-1</td>
+</tr>
+<tr>
+<td>+baike_info</td>
+<td>object</td>
+<td>否</td>
+<td>对应识别结果的百科词条名称</td>
+</tr>
+<tr>
+<td>++baike_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百度百科页面链接</td>
+</tr>
+<tr>
+<td>++image_url</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科图片链接</td>
+</tr>
+<tr>
+<td>++description</td>
+<td>string</td>
+<td>否</td>
+<td>对应识别结果百科内容描述</td>
+</tr>
+</tbody></table>
+<p><strong>花卉识别 返回示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;log_id&quot;: 2233046923807801461,</span><br><span class="line">  &quot;result&quot;: [&#123;</span><br><span class="line">    &quot;score&quot;: 0.79123616218567,</span><br><span class="line">    &quot;name&quot;: &quot;荷花&quot;,</span><br><span class="line">    &quot;baike_info&quot;: &#123;</span><br><span class="line">      &quot;baike_url&quot;: &quot;http:&#x2F;&#x2F;baike.baidu.com&#x2F;item&#x2F;%E8%8D%B7%E8%8A%B1&#x2F;158674&quot;,</span><br><span class="line">      &quot;description&quot;: &quot;荷花(Lotus flower)属山龙眼目，莲科，是莲属二种植物的通称。又名莲花、水芙蓉等。是莲属多年生水生草本花卉。地下茎长而肥厚，有长节，叶盾圆形。花期6至9月，单生于花梗顶端，花瓣多数，嵌生在花托穴内，有红、粉红、白、紫等色，或有彩纹、镶边。坚果椭圆形，种子成卵形。荷花种类很多，分观赏和食用两大类。原产亚洲热带和温带地区，中国早在周朝就有栽培记载。荷花全身皆宝，藕和莲子能食用，莲子、根茎、藕节、荷叶、花及种子的胚芽等都可入药。其出污泥而不染之品格恒为世人称颂。“接天莲叶无穷碧，映日荷花别样红”就是对荷花之美的真实写照。荷花“中通外直，不蔓不枝，出淤泥而不染，濯清涟而不妖”的高尚品格，历来为古往今来诗人墨客歌咏绘画的题材之一。1985年5月荷花被评为中国十大名花之一。荷花是印度,越南的国花。&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.16631570458412,</span><br><span class="line">    &quot;name&quot;: &quot;莲&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.015812600031495,</span><br><span class="line">    &quot;name&quot;: &quot;非花&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.0058604963123798,</span><br><span class="line">    &quot;name&quot;: &quot;碗莲&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;score&quot;: 0.0039983494207263,</span><br><span class="line">    &quot;name&quot;: &quot;并蒂莲&quot;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="食材识别"><a href="#食材识别" class="headerlink" title="食材识别"></a>食材识别</h2><p>该请求用于识别果蔬类食材，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中的果蔬食材结果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用食材识别 &quot;&quot;&quot;</span><br><span class="line">client.ingredient(image);</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 如果有可选参数 &quot;&quot;&quot;</span><br><span class="line">options &#x3D; &#123;&#125;</span><br><span class="line">options[&quot;top_num&quot;] &#x3D; 3</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 带参数调用食材识别 &quot;&quot;&quot;</span><br><span class="line">client.ingredient(image, options)</span><br></pre></td></tr></table></figure>
+
+<p><strong>食材识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+<tr>
+<td>top_num</td>
+<td>否</td>
+<td>string</td>
+<td>返回预测得分top结果数，如果为空或小于等于0默认为5；如果大于20默认20</td>
+</tr>
+</tbody></table>
+<p><strong>食材识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>是</td>
+<td>uint64</td>
+<td>唯一的log id，用于问题定位</td>
+</tr>
+<tr>
+<td>result</td>
+<td>是</td>
+<td>object()</td>
+<td>识别结果</td>
+</tr>
+<tr>
+<td>result_num</td>
+<td>否</td>
+<td>uint32</td>
+<td>识别结果数</td>
+</tr>
+<tr>
+<td>+name</td>
+<td>否</td>
+<td>string</td>
+<td>图像中的食材名称</td>
+</tr>
+<tr>
+<td>+score</td>
+<td>否</td>
+<td>double</td>
+<td>得分，0-1</td>
+</tr>
+</tbody></table>
+<p><strong>食材识别 返回示例</strong></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"log_id"</span>: <span class="number">1091287364</span>,</span><br><span class="line">    <span class="attr">"result_num"</span>: <span class="number">20</span>,</span><br><span class="line">    <span class="attr">"result"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"非果蔬食材"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">0.99999988079071</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"油菜"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">1.1175458780599e-8</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"蛇果"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">7.2776291659693e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"国光苹果"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">5.6971951600815e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"海枣"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">4.2508210285064e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"琼瑶浆葡萄"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">4.1451895249622e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"京锐号辣椒"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">3.9915102334476e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"冬瓜"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">3.3611948779821e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"长江豆"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">2.9944848822794e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"黑加仑"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">2.7750137743254e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"面包果"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">2.3357531464541e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"椰子"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">1.9741890344704e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"美人瓜"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">1.9319581490151e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"莲藕"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">1.759222323372e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"黑奥林"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">1.7266311713726e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"芥菜"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">1.6180708994895e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"样芹菜"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">1.5472728653876e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"篙巴"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">1.4084827748562e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"花生"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">1.3972580870103e-9</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"魁绿猕猴桃"</span>,</span><br><span class="line">            <span class="attr">"score"</span>: <span class="number">1.3920842256709e-9</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="红酒识别"><a href="#红酒识别" class="headerlink" title="红酒识别"></a>红酒识别</h2><p>该服务用于识别红酒标签，即对于输入的一张图片（可正常解码，长宽比适宜，且酒标清晰可见），输出图片中的红酒名称、国家、产区、酒庄、类型、糖分、葡萄品种、酒品描述等信息。可识别数十万中外常见红酒。 注意：图片中酒标要清晰可见，示例图片如下</p>
+<p><img src="https://ai.bdstatic.com/file/5DA8EEB0566D4331A85B28029A092118" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用红酒识别 &quot;&quot;&quot;</span><br><span class="line">client.redwine(image);</span><br></pre></td></tr></table></figure>
+
+<p><strong>红酒识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+</tbody></table>
+<p><strong>红酒识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>是</td>
+<td>uint64</td>
+<td>请求标识码，随机数，唯一</td>
+</tr>
+<tr>
+<td>result</td>
+<td>是</td>
+<td>dict</td>
+<td>识别结果</td>
+</tr>
+<tr>
+<td>+hasdetail</td>
+<td>是</td>
+<td>unit</td>
+<td>判断是否返回详细信息（除红酒中文名之外的其他字段），含有返回1，不含有返回0</td>
+</tr>
+<tr>
+<td>+wineNameCn</td>
+<td>是</td>
+<td>string</td>
+<td>红酒中文名，无法识别返回空，示例：波斯塔瓦经典赤霞珠品丽珠半甜红葡萄酒</td>
+</tr>
+<tr>
+<td>+wineNameEn</td>
+<td>否</td>
+<td>string</td>
+<td>红酒英文名，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：Bostavan Classic Cabernet</td>
+</tr>
+<tr>
+<td>+countryCn</td>
+<td>否</td>
+<td>string</td>
+<td>国家中文名，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：摩尔多瓦</td>
+</tr>
+<tr>
+<td>+countryEn</td>
+<td>否</td>
+<td>string</td>
+<td>国家英文名，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：Moldova</td>
+</tr>
+<tr>
+<td>+regionCn</td>
+<td>否</td>
+<td>string</td>
+<td>产区中文名，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：波尔多</td>
+</tr>
+<tr>
+<td>+regionEn</td>
+<td>否</td>
+<td>string</td>
+<td>产区英文名，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：Bordeaux</td>
+</tr>
+<tr>
+<td>+subRegionCn</td>
+<td>否</td>
+<td>string</td>
+<td>子产区中文名，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：梅多克</td>
+</tr>
+<tr>
+<td>+subRegionEn</td>
+<td>否</td>
+<td>string</td>
+<td>子产区英文名，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：Medoc</td>
+</tr>
+<tr>
+<td>+wineryCn</td>
+<td>否</td>
+<td>string</td>
+<td>酒庄中文名，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：波斯塔瓦酒庄</td>
+</tr>
+<tr>
+<td>+wineryEn</td>
+<td>否</td>
+<td>string</td>
+<td>酒庄英文名，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：Vinaria Bostavan</td>
+</tr>
+<tr>
+<td>+classifyByColor</td>
+<td>否</td>
+<td>string</td>
+<td>酒类型，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：红葡萄酒</td>
+</tr>
+<tr>
+<td>+classifyBySugar</td>
+<td>否</td>
+<td>string</td>
+<td>糖分类型，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：半甜型</td>
+</tr>
+<tr>
+<td>+color</td>
+<td>否</td>
+<td>string</td>
+<td>色泽，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：宝石红色</td>
+</tr>
+<tr>
+<td>+grapeCn</td>
+<td>否</td>
+<td>string</td>
+<td>葡萄品种，可能有多种葡萄，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：品丽珠;赤霞珠</td>
+</tr>
+<tr>
+<td>+grapeEn</td>
+<td>否</td>
+<td>string</td>
+<td>葡萄品种英文名，可能有多种葡萄，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：Cabernet Franc;Cabernet Sauvignon</td>
+</tr>
+<tr>
+<td>+tasteTemperature</td>
+<td>否</td>
+<td>string</td>
+<td>品尝温度，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：6-11℃</td>
+</tr>
+<tr>
+<td>+description</td>
+<td>否</td>
+<td>string</td>
+<td>酒品描述，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：葡萄酒呈深宝石红色，具有香料、香草和新鲜水果的果香，酒体分明，口感畅顺，果香横溢，单宁软化程度高，让你回味无穷</td>
+</tr>
+</tbody></table>
+<p><strong>红酒识别 返回示例</strong></p>
+<p>仅识别出红酒名称，hasdetail = 0：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;log_id&quot;: 3450013152046070669, </span><br><span class="line">	&quot;result&quot;: </span><br><span class="line">	&#123;</span><br><span class="line">		&quot;wineNameCn&quot;: &quot;银色高地阙歌干红&quot;,</span><br><span class="line">		&quot;hasdetail&quot;:0</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>识别出详细信息，hasdetail = 1：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;log_id&quot;: 2495538539661269738,</span><br><span class="line">	&quot;result&quot;: &#123;</span><br><span class="line">		&quot;classifyByColor&quot;: &quot;红葡萄酒&#x2F;Red Wine&quot;,</span><br><span class="line">		&quot;subRegionCn&quot;: &quot;梅多克&quot;,</span><br><span class="line">		&quot;wineNameCn&quot;: &quot;拉图嘉利庄园红葡萄酒（正牌）&quot;,</span><br><span class="line">		&quot;subRegionEn&quot;: &quot;Medoc&quot;,</span><br><span class="line">		&quot;regionEn&quot;: &quot;Bordeaux&quot;,</span><br><span class="line">		&quot;color&quot;: &quot;深紫红色&#x2F;Dark Violet&quot;,</span><br><span class="line">		&quot;wineNameEn&quot;: &quot;Chateau La Tour Carnet&quot;,</span><br><span class="line">		&quot;hasdetail&quot;: 1,</span><br><span class="line">		&quot;wineryCn&quot;: &quot;拉图嘉利庄园&quot;,</span><br><span class="line">		&quot;classifyBySugar&quot;: &quot;干型&#x2F;Dry&quot;,</span><br><span class="line">		&quot;tasteTemperature&quot;: &quot;16-18℃&quot;,</span><br><span class="line">		&quot;regionCn&quot;: &quot;波尔多&quot;,</span><br><span class="line">		&quot;wineryEn&quot;: &quot;Chateau La Tour-Carnet&quot;,</span><br><span class="line">		&quot;grapeCn&quot;: &quot;&quot;,</span><br><span class="line">		&quot;grapeEn&quot;: &quot;&quot;,</span><br><span class="line">		&quot;countryCn&quot;: &quot;法国&quot;,</span><br><span class="line">		&quot;countryEn&quot;: &quot;France&quot;,</span><br><span class="line">		&quot;description&quot;: &quot;此酒充满红果和黑果味道，并带有矿物质和花香（紫罗兰，玫瑰），混合些许香草气息，单宁柔软，余香悠长。在口中留下清新的味道，香料和香草味道萦绕口中。&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="货币识别"><a href="#货币识别" class="headerlink" title="货币识别"></a>货币识别</h2><p>识别图像中的货币类型，以纸币为主，正反面均可准确识别，接口返回货币的名称、代码、面值、年份信息；可识别各类近代常见货币，如美元、欧元、英镑、法郎、澳大利亚元、俄罗斯卢布、日元、韩元、泰铢、印尼卢比等。</p>
+<p>注意：图片中货币要清晰可见，示例图片如下</p>
+<p><img src="https://ai.bdstatic.com/file/04510634E9AE4649A9D18EA00B696A4B" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;</span><br><span class="line">def get_file_content(filePath):</span><br><span class="line">    with open(filePath, &#39;rb&#39;) as fp:</span><br><span class="line">        return fp.read()</span><br><span class="line"></span><br><span class="line">image &#x3D; get_file_content(&#39;example.jpg&#39;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; 调用货币识别 &quot;&quot;&quot;</span><br><span class="line">client.currency(image);</span><br></pre></td></tr></table></figure>
+
+<p><strong>货币识别 请求参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td>图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式</td>
+</tr>
+</tbody></table>
+<p><strong>货币识别 返回数据参数详情</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>是否必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>log_id</td>
+<td>是</td>
+<td>uint64</td>
+<td>请求标识码，随机数，唯一</td>
+</tr>
+<tr>
+<td>result</td>
+<td>是</td>
+<td>dict</td>
+<td>识别结果</td>
+</tr>
+<tr>
+<td>+hasdetail</td>
+<td>是</td>
+<td>unit</td>
+<td>判断是否返回详细信息（除货币名称之外的其他字段），含有返回1，不含有返回0</td>
+</tr>
+<tr>
+<td>+currencyName</td>
+<td>是</td>
+<td>string</td>
+<td>货币名称，无法识别返回空，示例：新加坡元</td>
+</tr>
+<tr>
+<td>+currencyCode</td>
+<td>否</td>
+<td>string</td>
+<td>货币代码，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：SGD</td>
+</tr>
+<tr>
+<td>+currencyDenomination</td>
+<td>否</td>
+<td>string</td>
+<td>货币面值，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：50元</td>
+</tr>
+<tr>
+<td>+year</td>
+<td>否</td>
+<td>string</td>
+<td>货币年份，<strong>hasdetail = 0时，表示无法识别，该字段不返回</strong>，示例：2004年</td>
+</tr>
+</tbody></table>
+<p><strong>货币识别 返回示例</strong></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"log_id"</span>: <span class="number">4247844653395235754</span>,</span><br><span class="line">  <span class="attr">"result"</span>: &#123;</span><br><span class="line">    <span class="attr">"currencyName"</span>: <span class="string">"美元"</span>,</span><br><span class="line">    <span class="attr">"hasdetail"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"currencyCode"</span>: <span class="string">"USD"</span>,</span><br><span class="line">    <span class="attr">"year"</span>: <span class="string">"2001年"</span>,</span><br><span class="line">    <span class="attr">"currencyDenomination"</span>: <span class="string">"50美元"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="人脸识别"><a href="#人脸识别" class="headerlink" title="人脸识别"></a>人脸识别</h1><h2 id="人脸检测"><a href="#人脸检测" class="headerlink" title="人脸检测"></a>人脸检测</h2><h2 id="能力介绍"><a href="#能力介绍" class="headerlink" title="能力介绍"></a>能力介绍</h2><p><strong>接口能力</strong></p>
+<ul>
+<li><strong>人脸检测</strong>：检测图片中的人脸并标记出位置信息;</li>
+<li><strong>人脸关键点</strong>：展示人脸的核心关键点信息，及150个关键点信息。</li>
+<li><strong>人脸属性值</strong>：展示人脸属性信息，如年龄、性别等。</li>
+<li><strong>人脸质量信息</strong>：返回人脸各部分的遮挡、光照、模糊、完整度、置信度等信息。</li>
+</ul>
+<p><strong>业务应用</strong></p>
+<p>典型应用场景：如<strong>人脸属性分析</strong>，<strong>基于人脸关键点的加工分析</strong>，<strong>人脸营销活动</strong>等。</p>
+<blockquote>
+<p>说明：检测响应速度，与图片中人脸数量相关，人脸数量较多时响应时间会有些许延长。</p>
+</blockquote>
+<p><strong>质量检测</strong></p>
+<p>如果需要判断一张图片中的人脸，是否符合后续识别或者对比的条件，可以使用此接口，在请求时在<code>face_field</code>参数中请求<code>quality</code>。基于返回结果<code>quality</code>中，以下字段及对应阈值，进行质量检测的判断，以保证人脸质量符合后续业务操作要求。</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>字段与解释</th>
+<th>推荐数值界限</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>遮挡范围</td>
+<td><strong>occlusion</strong>，取值范围[0~1]，0为无遮挡，1是完全遮挡 含有多个具体子字段，表示脸部多个部位 通常用作判断头发、墨镜、口罩等遮挡</td>
+<td>left_eye : 0.6, #左眼被遮挡的阈值 right_eye : 0.6, #右眼被遮挡的阈值 nose : 0.7, #鼻子被遮挡的阈值 mouth : 0.7, #嘴巴被遮挡的阈值 left_cheek : 0.8, #左脸颊被遮挡的阈值 right_cheek : 0.8, #右脸颊被遮挡的阈值 chin_contour : 0.6, #下巴被遮挡阈值</td>
+</tr>
+<tr>
+<td>模糊度范围</td>
+<td><strong>blur</strong>，取值范围[0~1]，0是最清晰，1是最模糊</td>
+<td>小于0.7</td>
+</tr>
+<tr>
+<td>光照范围</td>
+<td><strong>illumination</strong>，取值范围[0~255] 脸部光照的灰度值，0表示光照不好 以及对应客户端SDK中，YUV的Y分量</td>
+<td>大于40</td>
+</tr>
+<tr>
+<td>姿态角度</td>
+<td><strong>Pitch</strong>：三维旋转之俯仰角度[-90(上), 90(下)] <strong>Roll</strong>：平面内旋转角[-180(逆时针), 180(顺时针)] <strong>Yaw</strong>：三维旋转之左右旋转角[-90(左), 90(右)]</td>
+<td>分别小于20度</td>
+</tr>
+<tr>
+<td>人脸完整度</td>
+<td><strong>completeness</strong>（0或1），0为人脸溢出图像边界， 1为人脸都在图像边界内</td>
+<td>视业务逻辑判断</td>
+</tr>
+<tr>
+<td>人脸大小</td>
+<td>人脸部分的大小 建议长宽像素值范围：80<em>80~200</em>200</td>
+<td>人脸部分不小于<strong>100*100</strong>像素</td>
+</tr>
+</tbody></table>
+<h2 id="调用方式"><a href="#调用方式" class="headerlink" title="调用方式"></a>调用方式</h2><p><strong>请求URL数据格式</strong></p>
+<p>向API服务地址使用POST发送请求，必须在URL中带上参数<code>access_token</code>，可通过后台的API Key和Secret Key生成，具体方式请参考“<a href="http://ai.baidu.com/docs#/Auth" target="_blank" rel="noopener">Access Token获取</a>”。</p>
+<p><strong>示例代码</strong></p>
+<ul>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-0-0-Bash" target="_blank" rel="noopener">Bash</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-0-1-PHP" target="_blank" rel="noopener">PHP</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-0-2-JAVA" target="_blank" rel="noopener">JAVA</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-0-3-Python" target="_blank" rel="noopener">Python</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-0-4-cpp" target="_blank" rel="noopener">Cpp</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-0-5-csharp" target="_blank" rel="noopener">C#</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-0-6-js" target="_blank" rel="noopener">Node</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">curl -i -k <span class="string">'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=【百度云应用的AK】&amp;client_secret=【百度云应用的SK】'</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>注意</strong>：<code>access_token</code>的有效期为30天，<strong>切记需要每30天进行定期更换，或者每次请求都拉取新token</strong>；</p>
+</blockquote>
+<p>例如此接口，使用HTTPS POST发送：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;aip.baidubce.com&#x2F;rest&#x2F;2.0&#x2F;face&#x2F;v1&#x2F;merge?access_token&#x3D;24.f9ba9c5341b67688ab4added8bc91dec.2592000.1485570332.282335-8574074</span><br></pre></td></tr></table></figure>
+
+<p>POST中Body的参数，按照下方请求参数说明选择即可。</p>
+<blockquote>
+<p><strong>提示</strong>：如果您为百度云老用户，正在使用其他非AI的服务，可以参考<a href="https://cloud.baidu.com/doc/Reference/AuthenticationMechanism.html" target="_blank" rel="noopener">百度云AKSK鉴权方式</a>发送请求，虽然<strong>请求方式</strong>和<strong>鉴权方法</strong>和本文所介绍的不同，但请求参数和返回结果一致。</p>
+</blockquote>
+<h2 id="请求说明-1"><a href="#请求说明-1" class="headerlink" title="请求说明"></a>请求说明</h2><p><strong>注意事项</strong>：</p>
+<ul>
+<li><strong>请求体格式化</strong>：Content-Type为<code>application/json</code>，通过<code>json</code>格式化请求体。</li>
+<li><strong>Base64编码</strong>：请求的图片需经过<code>Base64编码</code>，图片的base64编码指将图片数据编码成一串字符串，使用该字符串代替图像地址。您可以首先得到图片的二进制，然后用Base64格式编码即可。需要注意的是，图片的base64编码是不包含图片头的，如<code>data:image/jpg;base64,</code></li>
+<li><strong>图片格式</strong>：现支持PNG、JPG、JPEG、BMP，<strong>不支持GIF图片</strong></li>
+<li><strong>人脸识别接口分为V2和V3两个版本，本文档为V3版本接口的说明文档，请确认您在百度云后台获得的是V3版本接口权限，再来阅读本文档。</strong></li>
+</ul>
+<blockquote>
+<p>辨别接口版本的方法是：在百度云后台进入【应用列表】，点击【应用名称】，在【API列表】中可以看到【请求地址】，若请求地址中带有【v3】标识，则您具有的是v3权限，可以阅读本文档；若请求地址中带有【v2】标识，则您具有的是v2权限，应该去阅读v2文档。</p>
+</blockquote>
+<p><strong>请求示例</strong></p>
+<p>HTTP方法：<code>POST</code></p>
+<p>请求URL： <code>https://aip.baidubce.com/rest/2.0/face/v3/detect</code></p>
+<p>URL参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>access_token</td>
+<td>通过API Key和Secret Key获取的access_token,参考“<a href="http://ai.baidu.com/docs#/Auth/top" target="_blank" rel="noopener">Access Token获取</a>”</td>
+</tr>
+</tbody></table>
+<p>Header：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<p>Body中放置请求参数，参数详情如下：</p>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>image</td>
+<td>是</td>
+<td>string</td>
+<td>图片信息(<strong>总数据大小应小于10M</strong>)，图片上传方式根据image_type来判断</td>
+</tr>
+<tr>
+<td>image_type</td>
+<td>是</td>
+<td>string</td>
+<td>图片类型 <strong>BASE64</strong>:图片的base64值，base64编码后的图片数据，编码后的图片大小不超过2M； <strong>URL</strong>:图片的 URL地址( 可能由于网络等原因导致下载图片时间过长)； <strong>FACE_TOKEN</strong>: 人脸图片的唯一标识，调用人脸检测接口时，会为每个人脸图片赋予一个唯一的FACE_TOKEN，同一张图片多次检测得到的FACE_TOKEN是同一个。</td>
+</tr>
+<tr>
+<td>face_field</td>
+<td>否</td>
+<td>string</td>
+<td>包括<strong>age,beauty,expression,face_shape,gender,glasses,landmark,landmark150,race,quality,eye_status,emotion,face_type信息</strong> 逗号分隔. 默认只返回face_token、人脸框、概率和旋转角度</td>
+</tr>
+<tr>
+<td>max_face_num</td>
+<td>否</td>
+<td>uint32</td>
+<td>最多处理人脸的数目，默认值为1，仅检测图片中面积最大的那个人脸；<strong>最大值10</strong>，检测图片中面积最大的几张人脸。</td>
+</tr>
+<tr>
+<td>face_type</td>
+<td>否</td>
+<td>string</td>
+<td>人脸的类型 <strong>LIVE</strong>表示生活照：通常为手机、相机拍摄的人像图片、或从网络获取的人像图片等 <strong>IDCARD</strong>表示身份证芯片照：二代身份证内置芯片中的人像照片 <strong>WATERMARK</strong>表示带水印证件照：一般为带水印的小图，如公安网小图 <strong>CERT</strong>表示证件照片：如拍摄的身份证、工卡、护照、学生证等证件图片 默认<strong>LIVE</strong></td>
+</tr>
+<tr>
+<td>liveness_control</td>
+<td>否</td>
+<td>string</td>
+<td><strong>活体控制</strong> 检测结果中不符合要求的人脸会被过滤 <strong>NONE</strong>: 不进行控制 <strong>LOW</strong>:较低的活体要求(高通过率 低攻击拒绝率) <strong>NORMAL</strong>: 一般的活体要求(平衡的攻击拒绝率, 通过率) <strong>HIGH</strong>: 较高的活体要求(高攻击拒绝率 低通过率) 默认<strong>NONE</strong></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>说明：face_field参数，默认只返回人脸框、概率和旋转角度，age等更多属性，请在此参数中添加。</p>
+</blockquote>
+<p><strong>示例代码</strong></p>
+<p><strong>提示一</strong>：使用示例代码前，请记得替换其中的示例Token、图片地址或Base64信息。</p>
+<p><strong>提示二</strong>：部分语言依赖的类或库，请在代码注释中查看下载地址。</p>
+<ul>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-1-0-Bash" target="_blank" rel="noopener">Bash</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-1-1-PHP" target="_blank" rel="noopener">PHP</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-1-2-JAVA" target="_blank" rel="noopener">JAVA</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-1-3-Python" target="_blank" rel="noopener">Python</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-1-4-cpp" target="_blank" rel="noopener">Cpp</a></li>
+<li><a href="https://cloud.baidu.com/doc/FACE/s/yk37c1u4t#codeset-1-5-csharp" target="_blank" rel="noopener">C#</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">人脸检测与属性分析</span><br><span class="line">curl -i -k <span class="string">'https://aip.baidubce.com/rest/2.0/face/v3/detect?access_token=【调用鉴权接口获取的token】'</span> --data <span class="string">'&#123;"image":"027d8308a2ec665acb1bdf63e513bcb9","image_type":"FACE_TOKEN","face_field":"faceshape,facetype"&#125;'</span> -H <span class="string">'Content-Type:application/json; charset=UTF-8'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="返回说明"><a href="#返回说明" class="headerlink" title="返回说明"></a>返回说明</h2><p><strong>返回参数</strong></p>
+<ul>
+<li>返回结果</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>face_num</td>
+<td>是</td>
+<td>int</td>
+<td>检测到的图片中的人脸数量</td>
+</tr>
+<tr>
+<td>face_list</td>
+<td>是</td>
+<td>array</td>
+<td>人脸信息列表，具体包含的参数参考下面的列表。</td>
+</tr>
+<tr>
+<td>+face_token</td>
+<td>是</td>
+<td>string</td>
+<td>人脸图片的唯一标识</td>
+</tr>
+<tr>
+<td>+location</td>
+<td>是</td>
+<td>array</td>
+<td>人脸在图片中的位置</td>
+</tr>
+<tr>
+<td>++left</td>
+<td>是</td>
+<td>double</td>
+<td>人脸区域离左边界的距离</td>
+</tr>
+<tr>
+<td>++top</td>
+<td>是</td>
+<td>double</td>
+<td>人脸区域离上边界的距离</td>
+</tr>
+<tr>
+<td>++width</td>
+<td>是</td>
+<td>double</td>
+<td>人脸区域的宽度</td>
+</tr>
+<tr>
+<td>++height</td>
+<td>是</td>
+<td>double</td>
+<td>人脸区域的高度</td>
+</tr>
+<tr>
+<td>++rotation</td>
+<td>是</td>
+<td>int64</td>
+<td>人脸框相对于竖直方向的顺时针旋转角，[-180,180]</td>
+</tr>
+<tr>
+<td>+face_probability</td>
+<td>是</td>
+<td>double</td>
+<td>人脸置信度，范围【0~1】，代表这是一张人脸的概率，0最小、1最大。</td>
+</tr>
+<tr>
+<td>+angle</td>
+<td>是</td>
+<td>array</td>
+<td>人脸旋转角度参数</td>
+</tr>
+<tr>
+<td>++yaw</td>
+<td>是</td>
+<td>double</td>
+<td>三维旋转之左右旋转角[-90(左), 90(右)]</td>
+</tr>
+<tr>
+<td>++pitch</td>
+<td>是</td>
+<td>double</td>
+<td>三维旋转之俯仰角度[-90(上), 90(下)]</td>
+</tr>
+<tr>
+<td>++roll</td>
+<td>是</td>
+<td>double</td>
+<td>平面内旋转角[-180(逆时针), 180(顺时针)]</td>
+</tr>
+<tr>
+<td>+age</td>
+<td>否</td>
+<td>double</td>
+<td>年龄 ，当<strong>face_field包含age时返回</strong></td>
+</tr>
+<tr>
+<td>+beauty</td>
+<td>否</td>
+<td>int64</td>
+<td>美丑打分，范围0-100，越大表示越美。当<strong>face_fields包含beauty时返回</strong></td>
+</tr>
+<tr>
+<td>+expression</td>
+<td>否</td>
+<td>array</td>
+<td>表情，当 <strong>face_field包含expression时返回</strong></td>
+</tr>
+<tr>
+<td>++type</td>
+<td>否</td>
+<td>string</td>
+<td><strong>none</strong>:不笑；<strong>smile</strong>:微笑；<strong>laugh</strong>:大笑</td>
+</tr>
+<tr>
+<td>++probability</td>
+<td>否</td>
+<td>double</td>
+<td>表情置信度，范围【0~1】，0最小、1最大。</td>
+</tr>
+<tr>
+<td>+face_shape</td>
+<td>否</td>
+<td>array</td>
+<td>脸型，当<strong>face_field包含face_shape时返回</strong></td>
+</tr>
+<tr>
+<td>++type</td>
+<td>否</td>
+<td>double</td>
+<td><strong>square</strong>: 正方形 <strong>triangle</strong>:三角形 <strong>oval</strong>: 椭圆 <strong>heart</strong>: 心形 <strong>round</strong>: 圆形</td>
+</tr>
+<tr>
+<td>++probability</td>
+<td>否</td>
+<td>double</td>
+<td>置信度，范围【0~1】，代表这是人脸形状判断正确的概率，0最小、1最大。</td>
+</tr>
+<tr>
+<td>+gender</td>
+<td>否</td>
+<td>array</td>
+<td>性别，<strong>face_field包含gender时返回</strong></td>
+</tr>
+<tr>
+<td>++type</td>
+<td>否</td>
+<td>string</td>
+<td>male:<strong>男性</strong> female:<strong>女性</strong></td>
+</tr>
+<tr>
+<td>++probability</td>
+<td>否</td>
+<td>double</td>
+<td>性别置信度，范围【0~1】，0代表概率最小、1代表最大。</td>
+</tr>
+<tr>
+<td>+glasses</td>
+<td>否</td>
+<td>array</td>
+<td>是否带眼镜，<strong>face_field包含glasses时返回</strong></td>
+</tr>
+<tr>
+<td>++type</td>
+<td>否</td>
+<td>string</td>
+<td><strong>none</strong>:无眼镜，<strong>common</strong>:普通眼镜，<strong>sun</strong>:墨镜</td>
+</tr>
+<tr>
+<td>++probability</td>
+<td>否</td>
+<td>double</td>
+<td>眼镜置信度，范围【0~1】，0代表概率最小、1代表最大。</td>
+</tr>
+<tr>
+<td>+eye_status</td>
+<td>否</td>
+<td>array</td>
+<td>双眼状态（睁开/闭合） <strong>face_field包含eye_status时返回</strong></td>
+</tr>
+<tr>
+<td>++left_eye</td>
+<td>否</td>
+<td>double</td>
+<td>左眼状态 [0,1]取值，越接近0闭合的可能性越大</td>
+</tr>
+<tr>
+<td>++right_eye</td>
+<td>否</td>
+<td>double</td>
+<td>右眼状态 [0,1]取值，越接近0闭合的可能性越大</td>
+</tr>
+<tr>
+<td>+emotion</td>
+<td>否</td>
+<td>array</td>
+<td>情绪 <strong>face_field包含emotion时返回</strong></td>
+</tr>
+<tr>
+<td>++type</td>
+<td>否</td>
+<td>string</td>
+<td><strong>angry</strong>:愤怒 <strong>disgust</strong>:厌恶 <strong>fear</strong>:恐惧 <strong>happy</strong>:高兴 <strong>sad</strong>:伤心 <strong>surprise</strong>:惊讶 <strong>neutra</strong>l:无表情 <strong>pouty</strong>: 撅嘴 <strong>grimace</strong>:鬼脸</td>
+</tr>
+<tr>
+<td>++probability</td>
+<td>否</td>
+<td>double</td>
+<td>情绪置信度，范围0~1</td>
+</tr>
+<tr>
+<td>+face_type</td>
+<td>否</td>
+<td>array</td>
+<td>真实人脸/卡通人脸 <strong>face_field包含face_type时返回</strong></td>
+</tr>
+<tr>
+<td>++type</td>
+<td>否</td>
+<td>string</td>
+<td><strong>human</strong>: 真实人脸 <strong>cartoon</strong>: 卡通人脸</td>
+</tr>
+<tr>
+<td>++probability</td>
+<td>否</td>
+<td>double</td>
+<td>人脸类型判断正确的置信度，范围【0~1】，0代表概率最小、1代表最大。</td>
+</tr>
+<tr>
+<td>+landmark</td>
+<td>否</td>
+<td>array</td>
+<td>4个关键点位置，左眼中心、右眼中心、鼻尖、嘴中心。<strong>face_field包含landmark时返回</strong></td>
+</tr>
+<tr>
+<td>+landmark72</td>
+<td>否</td>
+<td>array</td>
+<td>72个特征点位置 <strong>face_field包含landmark72时返回</strong></td>
+</tr>
+<tr>
+<td>+landmark150</td>
+<td>否</td>
+<td>array</td>
+<td>150个特征点位置 <strong>face_field包含landmark150时返回</strong></td>
+</tr>
+<tr>
+<td>+quality</td>
+<td>否</td>
+<td>array</td>
+<td>人脸质量信息。<strong>face_field包含quality时返回</strong></td>
+</tr>
+<tr>
+<td>++occlusion</td>
+<td>否</td>
+<td>array</td>
+<td>人脸各部分遮挡的概率，范围[0~1]，0表示完整，1表示不完整</td>
+</tr>
+<tr>
+<td>+++left_eye</td>
+<td>否</td>
+<td>double</td>
+<td>左眼遮挡比例，[0-1] ，1表示完全遮挡</td>
+</tr>
+<tr>
+<td>+++right_eye</td>
+<td>否</td>
+<td>double</td>
+<td>右眼遮挡比例，[0-1] ， 1表示完全遮挡</td>
+</tr>
+<tr>
+<td>+++nose</td>
+<td>否</td>
+<td>double</td>
+<td>鼻子遮挡比例，[0-1] ， 1表示完全遮挡</td>
+</tr>
+<tr>
+<td>+++mouth</td>
+<td>否</td>
+<td>double</td>
+<td>嘴巴遮挡比例，[0-1] ， 1表示完全遮挡</td>
+</tr>
+<tr>
+<td>+++left_cheek</td>
+<td>否</td>
+<td>double</td>
+<td>左脸颊遮挡比例，[0-1] ， 1表示完全遮挡</td>
+</tr>
+<tr>
+<td>+++right_cheek</td>
+<td>否</td>
+<td>double</td>
+<td>右脸颊遮挡比例，[0-1] ， 1表示完全遮挡</td>
+</tr>
+<tr>
+<td>+++chin</td>
+<td>否</td>
+<td>double</td>
+<td>下巴遮挡比例，，[0-1] ， 1表示完全遮挡</td>
+</tr>
+<tr>
+<td>++blur</td>
+<td>否</td>
+<td>double</td>
+<td>人脸模糊程度，范围[0~1]，0表示清晰，1表示模糊</td>
+</tr>
+<tr>
+<td>++illumination</td>
+<td>否</td>
+<td>double</td>
+<td>取值范围在[0~255], 表示脸部区域的光照程度 越大表示光照越好</td>
+</tr>
+<tr>
+<td>++completeness</td>
+<td>否</td>
+<td>int64</td>
+<td>人脸完整度，0或1, 0为人脸溢出图像边界，1为人脸都在图像边界内</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>返回示例</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;	</span><br><span class="line">  <span class="attr">"face_num"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"face_list"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"face_token"</span>: <span class="string">"35235asfas21421fakghktyfdgh68bio"</span>,</span><br><span class="line">            <span class="attr">"location"</span>: &#123; </span><br><span class="line">                <span class="attr">"left"</span>: <span class="number">117</span>,</span><br><span class="line">                <span class="attr">"top"</span>: <span class="number">131</span>,</span><br><span class="line">                <span class="attr">"width"</span>: <span class="number">172</span>,</span><br><span class="line">                <span class="attr">"height"</span>: <span class="number">170</span>,</span><br><span class="line">                <span class="attr">"rotation"</span>: <span class="number">4</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">"face_probability"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="attr">"angle"</span> :&#123;</span><br><span class="line">                 <span class="attr">"yaw"</span> : <span class="number">-0.34859421849251</span></span><br><span class="line">                 <span class="string">"pitch"</span> <span class="number">1.9135693311691</span>  </span><br><span class="line">                 <span class="string">"roll"</span> :<span class="number">2.3033397197723</span>  </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="string">"landmark"</span>: [  </span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="attr">"x"</span>: <span class="number">161.74819946289</span>,</span><br><span class="line">                    <span class="attr">"y"</span>: <span class="number">163.30244445801</span></span><br><span class="line">                &#125;,</span><br><span class="line">                ...</span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">"landmark72"</span>: [ </span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="attr">"x"</span>: <span class="number">115.86531066895</span>,</span><br><span class="line">                    <span class="attr">"y"</span>: <span class="number">170.0546875</span></span><br><span class="line">                &#125;，</span><br><span class="line">                ...</span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">"age"</span>: <span class="number">29.298097610474</span>,</span><br><span class="line">            <span class="attr">"beauty"</span>: <span class="number">55.128883361816</span>,</span><br><span class="line">            <span class="attr">"expression"</span>: &#123;</span><br><span class="line">                <span class="attr">"type"</span>: <span class="string">"smile"</span>,</span><br><span class="line">                <span class="attr">"probability"</span> : <span class="number">0.5543018579483</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">"gender"</span>: &#123;</span><br><span class="line">                <span class="attr">"type"</span>: <span class="string">"male"</span>,</span><br><span class="line">                <span class="attr">"probability"</span>: <span class="number">0.99979132413864</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">"glasses"</span>: &#123;</span><br><span class="line">    			<span class="attr">"type"</span>: <span class="string">"sun"</span>,</span><br><span class="line">                <span class="attr">"probability"</span>: <span class="number">0.99999964237213</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">"race"</span>: &#123;</span><br><span class="line">                <span class="attr">"type"</span>: <span class="string">"yellow"</span>,</span><br><span class="line">                <span class="attr">"probability"</span>: <span class="number">0.99999976158142</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">"face_shape"</span>: &#123;</span><br><span class="line">                <span class="attr">"type"</span>: <span class="string">"triangle"</span>,</span><br><span class="line">                <span class="attr">"probability"</span>: <span class="number">0.5543018579483</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="string">"quality"</span>: &#123;</span><br><span class="line">                <span class="attr">"occlusion"</span>: &#123;</span><br><span class="line">                    <span class="attr">"left_eye"</span>: <span class="number">0</span>,</span><br><span class="line">                    <span class="attr">"right_eye"</span>: <span class="number">0</span>,</span><br><span class="line">                    <span class="attr">"nose"</span>: <span class="number">0</span>,</span><br><span class="line">                    <span class="attr">"mouth"</span>: <span class="number">0</span>,</span><br><span class="line">                    <span class="attr">"left_cheek"</span>: <span class="number">0.0064102564938366</span>,</span><br><span class="line">                    <span class="attr">"right_cheek"</span>: <span class="number">0.0057411273010075</span>,</span><br><span class="line">                    <span class="attr">"chin"</span>: <span class="number">0</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">"blur"</span>: <span class="number">1.1886881756684e-10</span>,</span><br><span class="line">                <span class="attr">"illumination"</span>: <span class="number">141</span>,</span><br><span class="line">                <span class="attr">"completeness"</span>: <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><strong>72个关键点分布图（对应landmark72个点的顺序，序号从0-71）</strong>： <img src="https://ai.bdstatic.com/file/52BC00FFD4754A6298D977EDAD033DA0" alt="img"></p>
+<p>150个关键点分布图，红色关键点为在72关键点基础上增加的关键点（对应landmark150个点的顺序，序号从0-149，且每个关键点有对应的英文命名作为参数名，请参考图片下方表格）： <img src="https://ai.bdstatic.com/file/4F9308E3218642B896306DE4200FAE2A" alt="img"></p>
+<p>关键点名称如下图， <img src="https://ai.bdstatic.com/file/00CD0586F07845109C749FCB69DA79E5" alt="img"></p>
+<p><strong>错误码</strong></p>
+<h2 id="检测校花网大学校花首页各个校花的年龄及颜值"><a href="#检测校花网大学校花首页各个校花的年龄及颜值" class="headerlink" title="检测校花网大学校花首页各个校花的年龄及颜值"></a>检测校花网大学校花首页各个校花的年龄及颜值</h2><p><a href="http://www.521609.com/daxuexiaohua/" target="_blank" rel="noopener">http://www.521609.com/daxuexiaohua/</a></p>
+<p><img src="C:%5CUsers%5Cyun%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200203234323110.png" alt="image-20200203234323110"></p>
+<h3 id="获取校花网的校花图片"><a href="#获取校花网的校花图片" class="headerlink" title="获取校花网的校花图片"></a>获取校花网的校花图片</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">ips=[<span class="string">'58.212.41.243:9999'</span>,<span class="string">'60.167.22.162:9999'</span>,<span class="string">'39.106.66.178:80'</span>]</span><br><span class="line">url = <span class="string">'http://www.521609.com/daxuexiaohua/'</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.17 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line">req = requests.get(url=url, headers=headers)</span><br><span class="line"></span><br><span class="line"><span class="comment"># str转bytes叫encode，bytes转str叫decode</span></span><br><span class="line"><span class="keyword">if</span> req.encoding == <span class="string">'ISO-8859-1'</span>:</span><br><span class="line">    encodings = requests.utils.get_encodings_from_content(req.text)</span><br><span class="line">    <span class="keyword">if</span> encodings:</span><br><span class="line">        encoding = encodings[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        encoding = req.apparent_encoding</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    encoding = req.encoding</span><br><span class="line">encode_text = req.content.decode(encoding, <span class="string">'replace'</span>)</span><br><span class="line"><span class="comment"># print(encode_text)</span></span><br><span class="line">tree = etree.HTML(encode_text)</span><br><span class="line">img_list = tree.xpath(<span class="string">'//*[@id="content"]/div[2]/div[2]/ul/li/a/img'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> img <span class="keyword">in</span> img_list:</span><br><span class="line">    <span class="keyword">if</span> str(img.xpath(<span class="string">'@alt'</span>)[<span class="number">0</span>])+<span class="string">'jpg'</span> <span class="keyword">in</span> os.listdir(<span class="string">'bg'</span>):</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    print(str(img.xpath(<span class="string">'@alt'</span>)[<span class="number">0</span>]), img.xpath(<span class="string">'@src'</span>)[<span class="number">0</span>])</span><br><span class="line">    <span class="comment"># http://www.521609.com/uploads/allimg/111020/11329353c0-1-lp.jpg</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> str(img.xpath(<span class="string">'@alt'</span>)[<span class="number">0</span>]).startswith(<span class="string">'h'</span>):</span><br><span class="line">        img_content = requests.get(img.xpath(<span class="string">'@src'</span>)[<span class="number">0</span>], proxies=&#123;<span class="string">'http'</span>: random.choice(ips)&#125;).content</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        img_content = requests.get(<span class="string">f"http://www.521609.com<span class="subst">&#123;img.xpath(<span class="string">'@src'</span>)[<span class="number">0</span>]&#125;</span>"</span>).content</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">f"bg//<span class="subst">&#123;img.xpath(<span class="string">'@alt'</span>)[<span class="number">0</span>]&#125;</span>.jpg"</span>, <span class="string">'wb'</span>)<span class="keyword">as</span> f:</span><br><span class="line">        f.write(img_content)</span><br><span class="line"></span><br><span class="line">    time.sleep(random.randint(<span class="number">1</span>, <span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="调用百度人脸检测API，获取每个图片的人脸数据"><a href="#调用百度人脸检测API，获取每个图片的人脸数据" class="headerlink" title="调用百度人脸检测API，获取每个图片的人脸数据"></a>调用百度人脸检测API，获取每个图片的人脸数据</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> aip <span class="keyword">import</span> AipFace</span><br><span class="line"></span><br><span class="line"><span class="string">""" 你的 APPID AK SK """</span></span><br><span class="line">APP_ID = <span class="string">'18367011'</span></span><br><span class="line">API_KEY = <span class="string">'9zXao1RoqfkvHuK3fhxW3iuO'</span></span><br><span class="line">SECRET_KEY = <span class="string">'MzlT3F4ErWFREFkgSLPZ9GW56panUwA7'</span></span><br><span class="line"></span><br><span class="line">face_client = AipFace(APP_ID, API_KEY, SECRET_KEY)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_file_content</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filePath, <span class="string">'rb'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        <span class="keyword">return</span> fp.read()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> img <span class="keyword">in</span> os.listdir(<span class="string">'bg'</span>):</span><br><span class="line">    options = &#123;&#125;</span><br><span class="line">    image = base64.b64encode(get_file_content(<span class="string">f'bg\\<span class="subst">&#123;img&#125;</span>'</span>))</span><br><span class="line">    image = str(image, <span class="string">'utf8'</span>)</span><br><span class="line">    imageType = <span class="string">"BASE64"</span></span><br><span class="line">    options[<span class="string">"face_field"</span>] = <span class="string">"age,beauty,expression,face_shape"</span></span><br><span class="line">    <span class="string">""" 调用人脸检测 """</span></span><br><span class="line">    res = face_client.detect(image, imageType, options=options)</span><br><span class="line">    <span class="comment"># print(img, res.get('result').get("face_list")[0].get('age'), res.get('result').get("face_list")[0].get('beauty'))</span></span><br><span class="line"></span><br><span class="line">    print(img, res.get(<span class="string">'result'</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="检测结果"><a href="#检测结果" class="headerlink" title="检测结果"></a>检测结果</h3><p><img src="C:%5CUsers%5Cyun%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200203234724261.png" alt="image-20200203234724261"></p>
+]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/02/04/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <title>Ayer中文说明</title>
+    <url>/2019/12/03/Ayer%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E/</url>
+    <content><![CDATA[<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><blockquote>
+<p><a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank" rel="noopener">Ayer</a> 是一个干净且优雅的Hexo主题，自带响应式，加载速度很快，该有的功能都有，可配置项也很多，非常适合作为你的博客主题，主题内还附送了6张精美的高清壁纸。欢迎使用和Star支持，如果你在使用过程中有任何疑问或者建议，欢迎联系我！如果你的博客采用了本主题，欢迎在下面评论区留下地址哦~</p>
+</blockquote>
+<p><a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank" rel="noopener">Ayer</a> 在马来语中是“水”的意思，在西班牙语中是“昨天”的意思。</p>
+<p><img src="https://i.loli.net/2019/12/03/SHPinIAclMX1Gra.png" alt="hexo-theme-ayer"></p>
+<p><a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank" rel="noopener">GitHub地址</a></p>
+<p><a href="https://gitee.com/shen-yu/hexo-theme-ayer" target="_blank" rel="noopener">国内镜像</a></p>
+<p><a href="https://shen-yu.gitee.io" target="_blank" rel="noopener">效果预览</a></p>
+<p><a href="https://shen-yu.gitee.io/2019/ayer/" target="_blank" rel="noopener">中文说明</a></p>
+<a id="more"></a>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><ol>
+<li>干净且优雅，文章内容美观易读</li>
+<li>首页封面全屏平铺，扁平化设计，简洁又不失高大上</li>
+<li>响应式设计，博客在桌面端、平板、手机等设备上均能很好的展现</li>
+<li>首页封面和文案可以任意更换，主题内附送6张精美高清壁纸</li>
+<li>时间轴式的归档页</li>
+<li>侧边栏可以点击显示或隐藏</li>
+<li>支持文章置顶和文章打赏</li>
+<li>支持文章字数和阅读时长统计</li>
+<li>支持 <code>MathJax</code> 数学公式</li>
+<li><code>TOC</code> 目录在文章页悬浮，跳转更方便</li>
+<li>可设置阅读文章时做密码验证（<a href="https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md" target="_blank" rel="noopener">hexo-blog-encrypt</a>）</li>
+<li><a href="https://valine.js.org/" target="_blank" rel="noopener">Valine</a>和<a href="https://gitalk.github.io/" target="_blank" rel="noopener">Gitalk</a>评论模块（推荐配合<code>leancloud</code>使用 <code>Valine</code>）</li>
+<li>集成了不蒜子、百度统计、Google Analytics、CNZZ等统计功能</li>
+<li>支持Github Ribbons</li>
+</ol>
+<p>如果想体验手机端浏览效果，可以扫一下二维码：</p>
+<p><img src="https://i.loli.net/2019/12/04/CaJ8bZnojg4GQEf.png" alt="手机端效果"></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 国内用户如果速度较慢，可以把github地址替换为：https://gitee.com/shen-yu/hexo-theme-ayer.git</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Shen-Yu/hexo-theme-ayer.git themes/ayer</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h1 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h1><p>将博客根目录下的 <code>_config.yml</code> 里的 <code>theme</code> 值修改成 <code>ayer</code></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">ayer</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/ayer</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h1 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h1><p>ayer目录下的 <code>_config.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 侧边栏菜单</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags</span></span><br><span class="line">  <span class="string">摄影:</span> <span class="string">http://shenyu-vip.lofter.com</span></span><br><span class="line">  <span class="string">旅行:</span> <span class="string">/tags/旅行/</span></span><br><span class="line">  <span class="string">关于我:</span> <span class="string">/2019/about</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 站点次标题和打字动效</span></span><br><span class="line"><span class="comment"># https://github.com/mattboldt/typed.js</span></span><br><span class="line"><span class="attr">subtitle:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>  <span class="comment"># 是否开启动效</span></span><br><span class="line">  <span class="attr">text:</span> <span class="string">面朝大海，春暖花开</span>  <span class="comment"># 显示的文字</span></span><br><span class="line">  <span class="attr">text2:</span> <span class="string">愿你一生努力，一生被爱</span>   <span class="comment"># 滚动播放，如果不需要可以留空</span></span><br><span class="line">  <span class="attr">text3:</span> <span class="string">想要的都拥有，得不到的都释怀</span>  <span class="comment"># 最多支持三段文字</span></span><br><span class="line">  <span class="attr">startDelay:</span> <span class="number">0</span>   <span class="comment"># 延迟时间</span></span><br><span class="line">  <span class="attr">typeSpeed:</span> <span class="number">200</span>  <span class="comment"># 打字速度</span></span><br><span class="line">  <span class="attr">loop:</span> <span class="literal">true</span>  <span class="comment"># 是否循环</span></span><br><span class="line">  <span class="attr">backSpeed:</span> <span class="number">100</span>  <span class="comment"># 回退速度</span></span><br><span class="line">  <span class="attr">showCursor:</span> <span class="literal">true</span>  <span class="comment"># 是否显示光标</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 网站图标和侧边栏logo</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/favicon.ico</span></span><br><span class="line"><span class="attr">logo:</span> <span class="string">/images/ayer-side.svg</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 封面配置</span></span><br><span class="line"><span class="comment"># enable-是否启用封面；path-封面背景图；logo-封面logo</span></span><br><span class="line"><span class="attr">cover:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">/images/cover1.jpg</span>  <span class="comment"># /source/images目录下附送多张精美壁纸，可任意更换</span></span><br><span class="line">  <span class="attr">logo:</span> <span class="string">/images/ayer.svg</span>  <span class="comment"># 如果不要直接设置成false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 页面顶部进度条  </span></span><br><span class="line"><span class="attr">progressBar:</span> <span class="string">ture</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文章配置</span></span><br><span class="line"><span class="comment"># 文章太长，截断按钮文字(在需要截断的行增加此标记：&lt;!--more--&gt;)</span></span><br><span class="line"><span class="attr">excerpt_link:</span> <span class="string">阅读更多...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否开启文章分享按钮</span></span><br><span class="line"><span class="attr">share_enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 文章分享文字</span></span><br><span class="line"><span class="attr">share_text:</span> <span class="string">分享</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分页文字</span></span><br><span class="line"><span class="attr">nav_text:</span></span><br><span class="line">  <span class="attr">page_prev:</span> <span class="string">上一页</span></span><br><span class="line">  <span class="attr">page_next:</span> <span class="string">下一页</span></span><br><span class="line">  <span class="attr">post_prev:</span> <span class="string">上一篇</span></span><br><span class="line">  <span class="attr">post_next:</span> <span class="string">下一篇</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文章页是否显示目录</span></span><br><span class="line"><span class="attr">toc:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文章中的图片是否支持点击放大</span></span><br><span class="line"><span class="attr">image_viewer:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># https://github.com/willin/hexo-wordcount</span></span><br><span class="line"><span class="comment"># 是否开启字数统计(关闭请设置enable为false)</span></span><br><span class="line"><span class="comment"># 也可以单独在md文件里Front-matter设置`no_word_count: true`属性，来自定义关闭字数统计</span></span><br><span class="line"><span class="attr">word_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 只在文章详情显示(不在首页显示)</span></span><br><span class="line">  <span class="attr">only_article_visit:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打赏</span></span><br><span class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-默认开启所有文章均有打赏，如果有些文章你不需要，请在文章对应的md文件里设置no_reward:true</span></span><br><span class="line"><span class="attr">reward_type:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 打赏wording</span></span><br><span class="line"><span class="attr">reward_wording:</span> <span class="string">'请我喝杯咖啡吧~'</span></span><br><span class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置logo的方式一样。比如：/images/alipay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span> <span class="string">/images/alipay.jpg</span></span><br><span class="line"><span class="comment"># 微信二维码图片地址</span></span><br><span class="line"><span class="attr">weixin:</span> <span class="string">/images/wechat.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否启用搜索</span></span><br><span class="line"><span class="attr">search:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># RSS订阅(先安装hexo-generator-feed插件，再去博客根目录config进行配置)</span></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 评论：1、Valine(推荐)；2、Gitalk</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1、Valine[一款快速、简洁且高效的无后端评论系统](https://github.com/xCss/Valine)</span></span><br><span class="line"><span class="comment"># 启用Valine必须先创建leancloud应用， 注册账号后获取 id|key 填入即可</span></span><br><span class="line"><span class="attr">leancloud:</span>  </span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">app_id:</span> <span class="comment">#</span></span><br><span class="line">  <span class="attr">app_key:</span> <span class="comment">#</span></span><br><span class="line"><span class="comment"># Valine配置(如果有些文章你想关闭评论，请在文章对应的md文件里设置no_valine:true)</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># 是否启用</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># 是否开启防垃圾评论验证</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mp</span> <span class="comment"># 头像样式(https://valine.js.org/avatar.html)</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">给我的文章加点评论吧~</span> <span class="comment"># placeholder</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2、Gitalk(https://github.com/gitalk/gitalk)</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span> <span class="comment"># true</span></span><br><span class="line">  <span class="attr">clientID:</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">clientSecret:</span> <span class="comment"># Client Secret</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="comment"># Repository name</span></span><br><span class="line">  <span class="attr">owner:</span> <span class="comment"># GitHub ID</span></span><br><span class="line">  <span class="attr">admin:</span> <span class="comment"># GitHub ID</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># GitHub Ribbons封面右上角的forkme(https://github.blog/2008-12-19-github-ribbons/)</span></span><br><span class="line"><span class="attr">github:</span> </span><br><span class="line">  <span class="comment"># (关闭请设置为false)</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">https://github.com/Shen-Yu/hexo-theme-ayer</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># fancybox(仅用于相册展示，若需要可配置albums)</span></span><br><span class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问量统计(不蒜子)</span></span><br><span class="line"><span class="attr">busuanzi:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 友盟cnzz统计(url填js代码src链接)</span></span><br><span class="line"><span class="attr">cnzz:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">url:</span> <span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Google Analytics</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">''</span></span><br><span class="line"><span class="comment"># 百度统计</span></span><br><span class="line"><span class="attr">baidu_analytics:</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数学公式</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 网站成立年份(默认为 2019，若填入年份小于当前年份，则显示为 2018-2019 类似的格式)</span></span><br><span class="line"><span class="attr">since:</span> <span class="number">2019</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#是否显示页脚信息(建议保留，有助于本主题的推广)</span></span><br><span class="line"><span class="attr">pageFooter:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你在配置过程中有问题，可以参考：<a href="https://gitee.com/shen-yu/shen-yu/tree/dev/" target="_blank" rel="noopener">我的博客源码</a></p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li><p><a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">hexo-generator-search</a> 搜索</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-generator-searchdb</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure>
+<p>然后将以下配置复制到你博客根目录下的 <code>_config.yml</code> 里（注意不是ayer目录下的）:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Hexo-generator-search</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generate-feed</a> RSS</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-generator-feed</span> <span class="string">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>  然后将以下配置复制到你博客根目录下的 <code>_config.yml</code> 里（注意不是ayer目录下的）:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">feed:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">atom</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">atom.xml</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">20</span></span><br><span class="line">    <span class="attr">hub:</span></span><br><span class="line">    <span class="attr">content:</span></span><br><span class="line">    <span class="attr">content_limit:</span> <span class="number">140</span></span><br><span class="line">    <span class="attr">content_limit_delim:</span> <span class="string">' '</span></span><br><span class="line">    <span class="attr">order_by:</span> <span class="string">-date</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://github.com/netcan/hexo-generator-index-pin-top" target="_blank" rel="noopener">hexo-generator-index-pin-top</a></p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>然后将以下复制到_posts/categories/index.md文件</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">type: categories</span><br><span class="line">layout: "categories"</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>配置同分类一样</p>
+<h2 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h2><p>需要在文章顶部配置</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Gallery</span><br><span class="line"></span><br><span class="line">albums: [</span><br><span class="line"><span class="code">        ["img_url","img_caption"],</span></span><br><span class="line"><span class="code">        ["img_url","img_caption"]</span></span><br><span class="line"><span class="code">        ]</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章目录"><a href="#文章目录" class="headerlink" title="文章目录"></a>文章目录</h2><p>用Tocbot解析文章标题并生成目录</p>
+<ul>
+<li><p>将以下配置复制到你ayer目录下的 <code>_config.yml</code> 里：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Toc</span></span><br><span class="line"> toc: <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+<li><p>当然你可能并不想所有文章都生成悬浮目录，你可以在文章顶部的配置中加一行来进行关闭：</p>
+  <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">toc: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>About Me</title>
+    <url>/2019/12/02/about/</url>
+    <content><![CDATA[<blockquote>
+<p>A Coder, live in Hangzhou, China.</p>
+</blockquote>
+<p>姓名：沈宇<br>家乡：绍兴<br>现居：杭州<br>GitHub: <a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">Shen-Yu</a><br>QQ: <a href="http://wpa.qq.com/msgrd?v=3&uin=448766534&site=qq&menu=yes" target="_blank" rel="noopener">448766534</a><br>微信: yuknass</p>
+<a id="more"></a>
+
+<!-- ![avatar.jpg](https://i.loli.net/2019/12/02/Hw5WJIMKzi1YrU8.jpg) -->
+
+<img src="https://i.loli.net/2019/12/28/ewSHTg3uWyJkaEv.jpg" alt="avatar" width="300" style="border-radius:50%"/>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>静享云南慢时光</title>
+    <url>/2018/11/21/%E9%9D%99%E4%BA%AB%E4%BA%91%E5%8D%97%E6%85%A2%E6%97%B6%E5%85%89/</url>
+    <content><![CDATA[<p>当我坐着飞机掠过玉龙雪山，当我拿着杯子舀起泸沽湖水，当我沐浴阳光闻着洱海气息，当我立于海埂大坝望着海鸥随风翱翔，当我骑着自行车与彝族寨子擦肩而过……当我真正踏入这片土地，我发现它不仅仅是适合文艺小资青年，更适合热爱山水，热爱自由的背包客。</p>
+<a id="more"></a>
+
+<p>由于这篇游记中涉及到好几个目的地，每个目的地又有很多照片，为了不影响游记的易读性和美观性，我把很多照片都拼接了起来。下面开始。</p>
+<h2 id="丽江"><a href="#丽江" class="headerlink" title="丽江"></a>丽江</h2><p>杭州到丽江4个小时左右的飞程，我却觉得漫长，迫不及待要一睹丽江的芳容。一进入云贵地区，从飞机小窗往下看，入眼皆是山水，当飞机掠过玉龙雪山的那一刻，更是对接下来的行程充满了期待。<br><img src="http://n3-q.mafengwo.net/s12/M00/08/A4/wKgED1v5a_yAXYmNAAK3uB4-9po82.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>以上是玉龙雪山的面貌，这还是前一天刚下过雪的样子，据说雪山上的积雪线在逐年升高。<br><img src="http://b1-q.mafengwo.net/s12/M00/08/BC/wKgED1v5bBWAUHbUABUO2sRHuYI25.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>下午到达丽江之后就找了个古城旁的客栈放行李，然后趁着午后阳光尚未离去，直奔古城内部。整体来讲，确实是很适合文艺青年的一座小城，古城里面很多酒吧和客栈，白天可以随手找个地方发呆晒太阳听民谣，里面也有很多小店，店里卖的都是小清新小文艺的玩意儿，怪不得好多文青来了这里之后就直接在这开客栈了，这里时光过得很慢，每个人的生活节奏也很慢，连门口的二哈也惬意得很。丽江应该是全国最适合发呆的一座城市了。</p>
+<p>夜幕降临，它又从静谧转向了不羁，每个人都在这酒吧的灯红酒绿中沉醉，人都说丽江是艳遇之都，果真不假。</p>
+<h2 id="泸沽湖"><a href="#泸沽湖" class="headerlink" title="泸沽湖"></a>泸沽湖</h2><p><img src="http://b1-q.mafengwo.net/s12/M00/08/C0/wKgED1v5bBiAbEhkABa8mIS11Os11.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>体验完丽江古城的日与夜，我打算去泸沽湖看看，网上总说，去丽江不去泸沽湖那等于是白去了。对于这个横陈于滇川边界的神秘湖泊，我在来之前其实并没有多少了解，只晓得它身处少数民族自治区，只晓得它值得一去。当我坐着中巴穿过4个小时的十八弯山路后，当我一眼瞥到它，就被惊艳了。首先，它足够静，大概是由于地理偏僻，虽然被云南旅游业大力推荐着，但它那份宁静还是没能被破坏，正如它的湖面那样波澜不惊。其次，它足够清，湖水的能见度可以说是云南这么多湖里数一数二的，而且湖水是可以直接饮用的。当然，这里也极具少数民族文化，集结了蒙古族，纳西族等多个民族的文化，这里每晚有摩梭族的篝火晚会，摩梭姑娘身着靓丽的民族服饰，优美的身姿配上泸沽湖水，又是一幅别致的画。<br><img src="http://b1-q.mafengwo.net/s12/M00/5C/7C/wKgED1v6LkCADIovAAJOWD9xV5s27.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"></p>
+<p>从丽江古城去泸沽湖可以在汽车站坐大巴，也可以网上订，也可以包车去，更可以自驾去。我是从云南旅游网的公众号订的，来回130，早上8点半从古城开出，路上经过金沙江司机会停下来让拍照，山上由于缺水，休息站的厕所都是要收费1块钱的。一程山路，到12点半才到。下午回来也有一班，1点半从泸沽湖开出，5点半到古城。来回票要和司机讲好在哪一天回来。我在泸沽湖只过了一夜，第二天就回来了，现在想起来还是比较后悔的，湖边可以租自行车，一天30，绕着湖可以骑一圈，而我只花了一下午从大落水村骑到草海就回来了。一路的风景自然不必说，从山路上可以远看泸沽湖水，路上也可以看到很多田地，很多纳西族的寨子，走近了看还有当地人开的小店，物价比几个景点村要便宜很多。一路上就是上下坡比较多比较累，环湖公路有70多公里，全程骑下来应该要两天。</p>
+<h2 id="大理"><a href="#大理" class="headerlink" title="大理"></a>大理</h2><p><img src="http://n4-q.mafengwo.net/s12/M00/08/C8/wKgED1v5bByAZ2nYAA58WUEP3ug71.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>从泸沽湖回到丽江，因为第二天要去大理，就在丽江火车站旁睡了一夜，其实睡在古城旁早起打车也来得及。从丽江去大理的火车一天只有两趟，一趟是早上7点，一趟是傍晚4点。</p>
+<p>到大理才上午9点，于是坐大巴去挖色，因为看网上的攻略说双廊那边在修路景色也没挖色原生态，所以此行就选了挖色作为看洱海的一个重要目的地。从大理火车站去各个景点的车都很多，去挖色的大巴是从大理交通运输集团那边坐，从火车站出来后右转就可以看到那个集团的大厦，11块钱一个人。不得不说，大理当地人还是挺好的，期间我在回来的路上把手机落在另一个大巴上了，那个售票阿姨就让司机在下一趟给送过来了，挺令我感动。还有是我把冲锋外套落在去大理古城的8路车上了，后来几经周折也算是找回来了。</p>
+<p>大理洱海和泸沽湖有相似的地方也有不同的地方。同样是那么平静，平静到能把你的心安抚下来，但洱海多了一丝浪漫气息，去挖色的环湖公路上可以看到岸边有许多情侣在拍婚纱照，在挖色，还多了几只生锈停在岸上的小舟，配上绿草地与碧波与芦苇，远处云朵戴在山顶上，更添一丝浪漫。</p>
+<p>洱海环湖可以租个电动车或者租个小汽车，但要注意提前拍好车身防止回来被坑。<br><img src="http://b4-q.mafengwo.net/s12/M00/60/CB/wKgED1v6MwKAHGYZABcaruS7XAk08.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>第二天晚上8点的动车去昆明，原先想着就在挖色过一夜，但来大理难道只是看洱海吗，当然不是的。于是看过洱海就回火车站，再从火车站坐上8路车去大理古城，晚上下榻在古城边。大理古城总体来说没啥看点，就随便逛逛古城内的小店，古城后面有三塔可以去看看，但买门票进去我感觉还是不值得。有特色的还是这边的饵丝（和面条差不多，就是大米做成的，更加香软），上面有耙肉，并且可以随便加菜。来大理的第二天，我一日三餐都吃的是饵丝哈，感觉吃不腻。</p>
+<p>第二天早上我想着既然古城没啥好玩的，就跑去喜洲古镇看看。从古城去喜洲古镇的交通可以选择在大丽线上招手拦路过的大巴，也可以直接在古城出来那个岔口打的，打的不贵，拼车过去一个人10元，大巴过去是7元。</p>
+<p>喜洲古镇东临洱海，西枕苍山，这里有保存完好的白族民居建筑群。整个古镇不大，半天就可以逛完，贯穿着多条集市，有卖特色丝巾披肩服饰的，也有卖当地特色小吃喜洲粑粑的，很是热闹。我在那边吃着饵丝晒了一下午的阳光，十分惬意。</p>
+<h2 id="昆明"><a href="#昆明" class="headerlink" title="昆明"></a>昆明</h2><p><img src="http://b2-q.mafengwo.net/s12/M00/60/D1/wKgED1v6MwyADHT2ABSsRV5TDqc18.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>从大理到昆明过去只有绿皮火车，现如今在铁路工人的辛勤开辟下，有了直达的动车，时间缩短了一半都不止。到昆明已经是晚上10点，在火车站旁随便找了个旅馆休息。第二天从火车站坐24路公交去海埂公园，因为之前在抖音看网友在海埂大坝拍的很好看，就觉得一定要去。去了之后果然没令我失望，成群的海鸥在岸边飞来飞去，等游客喂食，这里的海鸥大概早已习惯了被人喂，一点也不怕人，只要有食物还会停在你手上。海埂大坝上的风景比公园内更为壮观，成群的海鸥拍打着翅膀来回翱翔，堤岸上还有高倍望远镜供游客观赏（4元钱看2分钟）。</p>
+<p>看完海鸥我便坐索道上了西山，在西山上可以看到半个滇池半个春城，西山上面有直接下山的大巴，下来后我坐上地铁去了翠湖公园，顺便看看陆军讲武堂，这个讲武堂是免费开放的，与西南联大被称为是云南一文一武的两所历史名校，同时也出了很多伟人。逛完陆军讲武堂已经是傍晚5点，趁着夜色尚未降临，去看了隔壁的西南联大，西南联大如今只剩下旧址了，坐落在现在的云南师范大学里，逛逛看看，追忆一下英雄，从师范大学出来有一条文化巷，就在云南大学后面，到了晚上会有许多学生出来摆地摊，也值得逛一下。因为第二天晚上就要离开昆明去黔东南了，所以就回到火车站旁的旅馆又睡了一夜，第二天白天去抚仙湖。</p>
+<h2 id="抚仙湖"><a href="#抚仙湖" class="headerlink" title="抚仙湖"></a>抚仙湖</h2><p><img src="http://p2-q.mafengwo.net/s12/M00/60/D8/wKgED1v6MxiAZxE3ABnGDuiEW6Y75.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>抚仙湖，相较于昆明滇池，就少为世人所知了，但这里的湖水清澈到能和泸沽湖比肩。古人称之为“琉璃万顷”。它位于玉溪澄江县，是我国最大蓄水量的湖泊、最大的高原深水湖。和泸沽湖不同，这里沿岸有不少人造沙滩和秋千，还有钓鱼的老年人，景色更加多样化。</p>
+<p>从昆明去泸沽湖需要在昆明汽车南站坐开往澄江的大巴，车是坐满才走的，所以来回都最好预留一个小时，我上午9点到那，司机10点才开。票价来回都是20，全程高速，不到一小时就到了。淡季像我这种专门为了去看看抚仙湖的人极少，车上基本都是当地人。从澄江汽车站下来最好直接打车去最近的湖边，因为那边虽然有公交，但公交站很难找，而且到公交站还需要走一段路。回来倒是可以坐公交，2路和8路都是开往县城的，拦车投币就行了。</p>
+<p>我从澄江汽车站打车到抚仙湖公园是15块，下来之后旁边就有个人工沙滩，上面有很多水上车停着，还有几个秋千。我先是沿着湖边往西走，那边沙滩上有一艘白色小舟和一个白色门框，配上抚仙湖的湖水泛起浪花，十分浪漫，还遇到有一对情侣正在那拍婚纱照，走到望海公园我再一路向东走到月亮湾湿地公园。一路上的美景就更多了，有木栈道有独木舟有水中树，甚至令我有一种在东南亚海滩边漫步的感觉。沙滩上的秋千在旺季是要收费的，淡季没人收费，我坐在那秋千上发了很久的呆。</p>
+<p>我这一趟在云南花的时间才6天，好几个地方也只是走马观花，总体来讲，它真的是一个很适合安静发呆的地方，这里的每一片湖水每一寸阳光每一座山头，都值得你去发几天呆。</p>
+<p>另外我这一趟还一路向东去了黔东南和湘西，那两篇游记可以在我的主页找到。</p>
+]]></content>
+      <categories>
+        <category>旅行</category>
+      </categories>
+      <tags>
+        <tag>旅行</tag>
+        <tag>国内</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大美湘西</title>
+    <url>/2018/11/21/%E5%A4%A7%E7%BE%8E%E6%B9%98%E8%A5%BF/</url>
+    <content><![CDATA[<p>为什么先写这篇？因为湘西是我云贵湘之行的最后一站，刚出怀化火车站，我对它的印象是很差的，首先是有很多莫名其妙的人会把你围得透不过气，各种请你住宿吃饭打车，甚至我在怀化汽车站上厕所还向我收费（我当然没有给）。之后我去了凤凰古镇，到的时候正好是晚上，周遭一片漆黑，只有中心地带比较热闹，古镇里还有小女孩强行推销鲜花，和苗族姑娘拍照也得收费。这是湘西给我的第一印象。就是商业化太严重了，我想，也或许是当地经济比较差的缘故吧。。这和政府在城市整治这方面有脱不开的关系。不过抛开这些不谈，整个湘西的风景还是值得一去的。</p>
+<a id="more"></a>
+
+<h2 id="凤凰古镇"><a href="#凤凰古镇" class="headerlink" title="凤凰古镇"></a>凤凰古镇</h2><p>到凤凰古镇有两个交通方式，一个是从怀化坐大巴，一个是从吉首坐大巴。凤凰并没有火车站，所以这两种方式其实都差不多都走的是高速，就看你从哪里方便了。由于我是从镇远古镇过来的，考虑到如果坐火车到吉首就是凌晨了不是很方便，而且逛完还得原路返回，所以我就直接从镇远坐火车到怀化，怀化再坐大巴去凤凰。怀化汽车西站离火车站很近，坐大巴大概一个多小时就到凤凰了。 我到凤凰已经是傍晚了，在这要注意，凤凰古镇的公共交通是很不方便的，一路走过去你可能找了好久也没有找到公交站牌在哪里，听说一路车是可以直接到凤凰古镇，不知道为啥，我等了很久也没有来，所以在凤凰古镇我唯一用到的交通工具是我的脚，当然你也可以打的或者和别人拼车过去，大概5块钱的样子，其实从汽车站走过去对于我这种习惯于徒步的人来说也算是近的，才2公里左右。 进了凤凰古镇，我差点以为我走错地方了。因为灯光实在是太暗，而且和网上看到的照片相差太远了吧。后来问了下客栈老板娘，说是旅游淡季就没全部开灯。晚上的景色确实是不如镇远古镇。</p>
+<p><img src="http://p4-q.mafengwo.net/s12/M00/A5/00/wKgED1vyru6AZlrrAAa-nzE3IJ066.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>有灯光的地方都是一群中老年人挤着在拍照。</p>
+<p>晚上逛了一圈看到这样的景象我便瞬间没了兴致，回客栈洗洗睡了。古城内的客栈还是很多的，价格也相对合理，怕被坑就从网上订，网上订的就要跟着地图找具体位置了。</p>
+<p>第二天早上起来我就又去逛了，看到和昨晚截然不同的景象。。白天的凤凰古城还是挺美的哈。</p>
+<p><img src="http://p2-q.mafengwo.net/s12/M00/8E/AB/wKgED1vyleSALkumAAc2lE1m4Wc32.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://b1-q.mafengwo.net/s12/M00/F3/2A/wKgED1vzPceAMQHYAAhrnYVoMBc47.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://n1-q.mafengwo.net/s12/M00/F3/2A/wKgED1vzPciAbNdXAAlCJEqZ-zc60.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://n3-q.mafengwo.net/s12/M00/F5/9A/wKgED1vzTDOAa3pXABdhHzPSgb046.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://n2-q.mafengwo.net/s12/M00/F5/9A/wKgED1vzTDSAboeMAAjv-YEdsOU76.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"></p>
+<p>整个古城不大，半天就能逛完，一条沱江将它分隔成一南一北。可以沿着沱江来回走一圈。江上有条石块搭成的小道，拍照的人挺多的，远看就像是走在江上，不过要注意安全小心别掉下去，沱江的水流还是很急的。</p>
+<p>一路往东走可以看到湘西吊脚楼，排列在水上十分优雅。还能看到南华山上云雾缭绕，晴天是看不到的，阴雨天来凤凰正好，雾蒙蒙，多了一份朦胧感。</p>
+<h2 id="张家界国家森林公园"><a href="#张家界国家森林公园" class="headerlink" title="张家界国家森林公园"></a>张家界国家森林公园</h2><p>来到湘西当然不可错过张家界，从凤凰古城过去还是很方便的，有直达的大巴，80元，也可以先花25元坐大巴到吉首，吉首再坐火车20元去张家界。我是选了后者，因为没去过吉首，正好一路过去看看，也相对便宜。</p>
+<p>张家界有两个大型森林公园，需要区分开来。一个是天门山国家森林公园，坐索道就能直接到的，上面还有网红玻璃栈道，天门山索道离火车站很近，就在火车站出来再左转的大庸路上，索道缆车在火车站就能看到了，很长，有七千多米，是世界上最长的高山客运索道。比较适合文艺青年打卡，由于我这趟并没有去，所以无法深入介绍了。而且我觉得性价比不高，全程索道上下所以爬山乐趣也没了。另外一个就是我这次去的张家界国家森林公园，因为在武陵源区，所以也叫武陵源风景名胜区，这是张家界最出名的一个地方，比天门山要大好几倍，可玩性也大很多，如果背包客不到这个地方来算是白来张家界了。</p>
+<p>虽然我在张家界森林公园只玩了两天，但是已经把里面的交通以及路线全部搞清楚了，每个大景点也一一走过。接下来我会将我所知道的全部告诉你，我还有一个安排得很好的路线分享，可以让你在最短的时间玩遍张家界。好了，废话不多说。</p>
+<p><img src="http://b2-q.mafengwo.net/s12/M00/42/44/wKgED1vznUqAQ6cUAAGMx5fvYVs36.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>首先，张家界国家森林公园（以下简称张家界）的门票口总共有五个，除了上图中三个（森林公园，天子山，武陵源），其他在杨家界有个门票站，水绕四门下面也有一个。从火车站到张家界的班车只能去这三个门票站，车程一个小时左右，都是10来块钱。</p>
+<p>这三个口相对来说，武陵源门票口最繁华，住宿吃饭的都很多，物价也相对便宜。天子山其次，森林公园就比较少了。我的路线是从森林公园进，天子山住宿一夜，武陵源出。当然你也可以反过来，也可以武陵源作为住宿站。但我不建议森林公园作为住宿站，因为查了一下，天子山和武陵源的客栈都比森林公园要便宜要多。网上也有说把丁香榕村作为住宿站点的，其实那边的客栈相对来说也贵，我个人觉得要是你想看日出日落那可以选择住那边。</p>
+<p>下面说说各个景点和交通，这里面除了金鞭溪需要步行之外，其它都是可以通过景区环保车或索道或天梯去周转到达。（景区大门票225，和指纹绑定，4日内可以随便进出，包含了景区环保车，但不包括其它索道啥的）</p>
+<p>黄石寨，金鞭溪和袁家界我认为可以连在一起逛完，因为黄石寨是独立的一个景点，上面还是值得一去的，可以上去绕一圈看看五指峰什么的，上下都有索道，步行爬上去得一个小时，也可以上去索道下来步行，但我不建议爬上去，首先这会耗费大量体力，影响到之后逛金鞭溪。黄石寨索道下站到森林公园门票口都有环保车，逛完之后回来，然后沿着金鞭溪走，一路上景色很美，还能看到猴子们在溪水边嬉戏，走到千里相会是一个分叉口，可以选择爬上乱窜坡直到袁家界，也可以选择继续沿着金鞭溪走，走到水绕四门，然后坐环保车去百龙天梯，百龙天梯直接到袁家界。逛完袁家界就没多少力气了，坐环保车去天子山门票口或者丁香榕村住宿吧。当然，我这是按两天的行程来安排的，你也可以放慢节奏，到了水绕四门直接坐环保车出武陵源口找住宿。</p>
+<p>至于杨家界，可以安排到和天子山一起逛。因为杨家界里面的天波府爬起来还是很费力的，一路上都是怪石嶙峋，其中一条两石壁中间的路很窄。逛完杨家界应该也比较累了，坐上环保车去天子山索道站，逛一下贺龙公园看一下贺龙元帅铜像就坐索道下山，如果要爬下来也是很费力的，据说有7千多阶。坐索道下来时的风景很赞，可以近距离观赏张家界地貌。下来后还有精力的话就坐环保车去看看十里画廊，没精力了就直接出武陵源口，去张家界火车站大巴要去武陵源汽车站坐，需要向前走500米左右到汽车站，到此，一天的行程也就结束了。</p>
+<p>以上，按照两天行程的安排，每个景点都逛了，如果觉得太赶，可以适当拆开来，也不会太累。</p>
+<p>下面放照片(微笑)</p>
+<p><img src="http://n3-q.mafengwo.net/s12/M00/94/94/wKgED1vz1UWAZ6CVAAT41H9BUgo18.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>黄石寨的风光是连张信哲都在坐过之后称赞不已的。<br><img src="http://p2-q.mafengwo.net/s12/M00/94/9A/wKgED1vz1UyALo88AAcEmj-Wjh878.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://p3-q.mafengwo.net/s12/M00/94/9E/wKgED1vz1VGAWFnKAAYIepCyOZw70.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>上面两张是黄石寨上面的风光。<br><img src="http://n1-q.mafengwo.net/s12/M00/6F/AE/wKgED1v0-MaAXJWJAAoyTJ3tgt019.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>张家界森林公园门口。<br><img src="http://n1-q.mafengwo.net/s12/M00/6F/B0/wKgED1v0-MiAZDC8AAvIifjo9LI54.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://n3-q.mafengwo.net/s12/M00/6F/B4/wKgED1v0-MqAXBizAAsDHPRknAw10.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>以上是金鞭溪的风光。<br><img src="http://p3-q.mafengwo.net/s12/M00/6F/B8/wKgED1v0-MyAF3NAAAs8M5gAAGs16.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://p1-q.mafengwo.net/s12/M00/6F/BC/wKgED1v0-M6AFe9xAAtLX7hPD0093.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>从乱窜坡上去之后，首先会看到第一张的指示牌，如果你从袁家界爬下来的话要注意向金鞭溪的方向走，至于迷魂台是袁家界里面一个小景点。再往上爬，出来就是一条公路，这条公路是给环保车行驶用的，往左边指示的方向走就是袁家界了。这上面还有个墓，我觉得挺神秘的，说这是啥龙脉地。<br><img src="http://b1-q.mafengwo.net/s12/M00/6F/BF/wKgED1v0-NGALwdkAAjuwwKWU_k29.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://p4-q.mafengwo.net/s12/M00/6F/C2/wKgED1v0-NOADNvaAAkzhhXraxI99.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>阿凡达取景地。<br><img src="http://b3-q.mafengwo.net/s12/M00/6F/C4/wKgED1v0-NWAP9tvAAhGTpTpkSg78.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://b3-q.mafengwo.net/s12/M00/6F/C7/wKgED1v0-NeAe0alAAtStjgbkJM57.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>以上都是袁家界的风光。<br><img src="http://p3-q.mafengwo.net/s12/M00/6F/CE/wKgED1v0-N6AeX5zAAp4ykrSBX085.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>这张是杨家界天波府的风光，视野很开阔，只能拍全景照才能体现它的美。<br><img src="http://p3-q.mafengwo.net/s12/M00/6F/D1/wKgED1v0-N-AeBHRAAil20at-3837.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://b3-q.mafengwo.net/s12/M00/6F/D6/wKgED1v0-OOARVgxAAgdk4--aI885.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://p4-q.mafengwo.net/s12/M00/6F/D2/wKgED1v0-OGACmJ8AAonHmQjk_c15.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>从杨家界进去到天波府的地势很艰险，而且越往后越艰险，其中一段路窄到只能允许一个人通过，因为我去的时候正好桥坏了，所以还得爬钢丝梯上去，老年人肯定是上不了天波府的。<br><img src="http://b4-q.mafengwo.net/s12/M00/84/11/wKgED1v1BM-AfT-iAAov_uDuVXM12.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="http://n2-q.mafengwo.net/s12/M00/84/14/wKgED1v1BNGAX0TgAAZ1KYZFqdU21.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>天子山上的贺龙公园。<br><img src="http://b4-q.mafengwo.net/s12/M00/84/18/wKgED1v1BNOAHGUBAAgTLtT9en874.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>从天子山下去坐索道一路能看到不一样的景色，近距离观看红色的岩壁，繁茂的植被，能最大限度的还原张家界地貌。这也是我为什么推荐坐索道下去的一大原因。<br><img src="http://n3-q.mafengwo.net/s12/M00/84/1E/wKgED1v1BNWAN3hYAAqhFitoj3c49.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="https://n1-q.mafengwo.net/s12/M00/84/28/wKgED1v1BNqAQ4uaAAjWtadLhzY20.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="https://p2-q.mafengwo.net/s12/M00/84/2D/wKgED1v1BNyAD_W7AAj_vRcQ41k20.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="https://n4-q.mafengwo.net/s12/M00/84/31/wKgED1v1BN6AfMnKAAiUyyWYHrc28.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br><img src="https://b2-q.mafengwo.net/s12/M00/84/34/wKgED1v1BOGAMQPeAAvZNMUCWSk94.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>百龙天梯，世界上最高的户外电梯，世界第一梯。从山下到袁家界上面只要1分钟。<br><img src="https://p4-q.mafengwo.net/s12/M00/84/37/wKgED1v1BOKAIhSBAAbmMN7Om3434.jpeg?imageView2%2F2%2Fw%2F680%2Fq%2F90%7CimageMogr2%2Fstrip%2Fquality%2F90" alt="image.png"><br>最后从武陵源门票口出，门口住宿吃饭的地儿都挺多的，走不远处有个汽车站可以买到回市里的票。</p>
+]]></content>
+      <categories>
+        <category>旅行</category>
+      </categories>
+      <tags>
+        <tag>旅行</tag>
+        <tag>国内</tag>
+      </tags>
   </entry>
 </search>
