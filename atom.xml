@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yun-wangjun.github.io/"/>
-  <updated>2020-02-04T06:30:28.864Z</updated>
+  <updated>2020-02-04T07:18:36.273Z</updated>
   <id>https://yun-wangjun.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ceshi</title>
+    <link href="https://yun-wangjun.github.io/2020/02/04/ceshi/"/>
+    <id>https://yun-wangjun.github.io/2020/02/04/ceshi/</id>
+    <published>2020-02-04T07:15:19.000Z</published>
+    <updated>2020-02-04T07:18:36.273Z</updated>
+    
+    <content type="html"><![CDATA[<img src="/.io//myHexo\source\_posts\ceshi\01.jpg" style="zoom:50%;">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;img src=&quot;/.io//myHexo\source\_posts\ceshi\01.jpg&quot; style=&quot;zoom:50%;&quot;&gt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="人工智能AI" scheme="https://yun-wangjun.github.io/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BDAI/"/>
+    
+  </entry>
   
   <entry>
     <title>百度AI学习</title>
