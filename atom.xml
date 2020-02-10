@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yun-wangjun.github.io/"/>
-  <updated>2020-02-04T07:18:36.273Z</updated>
+  <updated>2020-02-10T04:15:44.664Z</updated>
   <id>https://yun-wangjun.github.io/</id>
   
   <author>
@@ -20,16 +20,17 @@
     <title>ceshi</title>
     <link href="https://yun-wangjun.github.io/2020/02/04/ceshi/"/>
     <id>https://yun-wangjun.github.io/2020/02/04/ceshi/</id>
-    <published>2020-02-04T07:15:19.000Z</published>
-    <updated>2020-02-04T07:18:36.273Z</updated>
+    <published>2020-02-04T07:12:34.000Z</published>
+    <updated>2020-02-10T04:15:44.664Z</updated>
     
-    <content type="html"><![CDATA[<img src="/.io//myHexo\source\_posts\ceshi\01.jpg" style="zoom:50%;">]]></content>
+    <content type="html"><![CDATA[<p><img src="/.io//H:%5CmyHexo%5Csource%5Cimages%5Cimg.jpg" alt="Alt text"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;img src=&quot;/.io//myHexo\source\_posts\ceshi\01.jpg&quot; style=&quot;zoom:50%;&quot;&gt;
+        &lt;p&gt;&lt;img src=&quot;/.io//H:%5CmyHexo%5Csource%5Cimages%5Cimg.jpg&quot; alt=&quot;Alt text&quot;&gt;&lt;/p&gt;
+
       
     
     </summary>
