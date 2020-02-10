@@ -23,13 +23,13 @@
     <published>2020-02-04T07:12:34.000Z</published>
     <updated>2020-02-10T04:15:44.664Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/.io//H:%5CmyHexo%5Csource%5Cimages%5Cimg.jpg" alt="Alt text"></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="H:%5CmyHexo%5Csource%5Cimages%5Cimg.jpg" alt="Alt text"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;/.io//H:%5CmyHexo%5Csource%5Cimages%5Cimg.jpg&quot; alt=&quot;Alt text&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&quot;H:%5CmyHexo%5Csource%5Cimages%5Cimg.jpg&quot; alt=&quot;Alt text&quot;&gt;&lt;/p&gt;
 
       
     
